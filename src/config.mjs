@@ -69,6 +69,9 @@ export const routes = {
   practice: { es: 'areas-de-practica/', en: 'en/practice-areas/', de: 'de/rechtsgebiete/' },
   litigation: { es: 'litigios-complejos/', en: 'en/complex-litigation/', de: 'de/prozessfuehrung/' },
   corporate: { es: 'derecho-corporativo/', en: 'en/corporate-law/', de: 'de/gesellschaftsrecht/' },
+  fraud: { es: 'victimas-de-fraude-y-estafa/', en: 'en/fraud-victims/', de: 'de/betrugsopfer/' },
+  succession: { es: 'sucesiones-y-herencias/', en: 'en/probate-inheritance/', de: 'de/erbrecht/' },
+  administrative: { es: 'derecho-administrativo/', en: 'en/administrative-law/', de: 'de/verwaltungsrecht/' },
   cocounsel: { es: 'corresponsal-para-firmas-extranjeras/', en: 'en/panama-co-counsel/', de: 'de/korrespondenzkanzlei-panama/' },
   maritime: { es: 'derecho-maritimo/', en: 'en/maritime-law/', de: 'de/seerecht/' },
   immigration: { es: 'migracion-y-reubicacion/', en: 'en/immigration-relocation/', de: 'de/einwanderung-umzug/' },
@@ -107,12 +110,12 @@ export const routes = {
   privacy: { es: 'privacidad/', en: 'en/privacy/', de: 'de/datenschutz/' },
 };
 
-export const practiceKeys = ['litigation', 'corporate', 'cocounsel', 'maritime', 'immigration', 'labor', 'realestate'];
+export const practiceKeys = ['litigation', 'corporate', 'fraud', 'succession', 'cocounsel', 'administrative', 'maritime', 'immigration', 'labor', 'realestate'];
 export const guideKeys = ['guideDebt', 'guideCompany', 'guideLitigation', 'guideFoundation', 'guideShip'];
 
 // Nombres cortos de cada área, para menús, formularios y tarjetas.
 export const practiceNames = {
-  es: { litigation: 'Litigios complejos', corporate: 'Derecho corporativo', cocounsel: 'Corresponsalía para firmas', maritime: 'Derecho marítimo', immigration: 'Migración y reubicación', labor: 'Derecho laboral', realestate: 'Bienes raíces' },
-  en: { litigation: 'Complex litigation', corporate: 'Corporate law', cocounsel: 'Local counsel for law firms', maritime: 'Maritime law', immigration: 'Immigration & relocation', labor: 'Labor law', realestate: 'Real estate' },
-  de: { litigation: 'Prozessführung', corporate: 'Gesellschaftsrecht', cocounsel: 'Korrespondenzkanzlei', maritime: 'Seerecht', immigration: 'Einwanderung & Umzug', labor: 'Arbeitsrecht', realestate: 'Immobilienrecht' },
+  es: { fraud: 'Víctimas de fraude', succession: 'Sucesiones y herencias', administrative: 'Derecho administrativo', litigation: 'Litigios complejos', corporate: 'Derecho corporativo', cocounsel: 'Corresponsalía para firmas', maritime: 'Derecho marítimo', immigration: 'Migración y reubicación', labor: 'Derecho laboral', realestate: 'Bienes raíces' },
+  en: { fraud: 'Fraud victims', succession: 'Probate & inheritance', administrative: 'Administrative law', litigation: 'Complex litigation', corporate: 'Corporate law', cocounsel: 'Local counsel for law firms', maritime: 'Maritime law', immigration: 'Immigration & relocation', labor: 'Labor law', realestate: 'Real estate' },
+  de: { fraud: 'Betrugsopfer', succession: 'Erbrecht', administrative: 'Verwaltungsrecht', litigation: 'Prozessführung', corporate: 'Gesellschaftsrecht', cocounsel: 'Korrespondenzkanzlei', maritime: 'Seerecht', immigration: 'Einwanderung & Umzug', labor: 'Arbeitsrecht', realestate: 'Immobilienrecht' },
 };

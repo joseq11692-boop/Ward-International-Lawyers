@@ -354,6 +354,104 @@ export default {
       related: ['immigration', 'litigation', 'corporate'],
     },
 
+    fraud: {
+      title: 'Abogados para víctimas de fraude y estafa en Panamá | Ward International Lawyers',
+      description: 'Representamos a víctimas de estafa, fraude de inversión y extorsión en Panamá: denuncia, querella penal, medidas sobre bienes y recuperación del dinero.',
+      eyebrow: 'Derecho penal',
+      h1: 'Víctimas de fraude y estafa en Panamá',
+      lead: 'Si le estafaron en Panamá, ya sea en una inversión, una compraventa o un negocio, actuamos como su querellante en el proceso penal para que el caso avance y para buscar la recuperación de su dinero.',
+      short: 'Querellas penales por estafa, fraude de inversión y extorsión; recuperación de dinero.',
+      intro: [
+        'Una denuncia sola rara vez basta. En el Sistema Penal Acusatorio, la víctima que se constituye como querellante puede aportar pruebas, pedir diligencias, ampliar la investigación a otros responsables y oponerse al archivo del caso. Esa participación activa es la que mueve los expedientes.',
+        'Representamos a personas y empresas, de Panamá y del extranjero, en casos de estafa, fraude de inversión, apropiación indebida y extorsión, incluidos casos con varias víctimas de un mismo esquema.',
+      ],
+      offerings: [
+        { t: 'Denuncia y querella', d: 'Preparamos y presentamos la denuncia y la querella con la prueba ordenada para que sea admitida.' },
+        { t: 'Ampliación de la querella', d: 'Incluimos a cómplices e intermediarios (brókeres, gestores, socios) y actualizamos la cuantía del daño.' },
+        { t: 'Casos archivados', d: 'Analizamos la resolución de archivo y buscamos las vías para reactivar o reingresar el caso.' },
+        { t: 'Medidas sobre bienes', d: 'Solicitamos medidas para asegurar bienes y fondos de los investigados mientras avanza el proceso.' },
+        { t: 'Acuerdos de reparación', d: 'Negociamos acuerdos de pago con garantías y damos seguimiento a su cumplimiento ante la Fiscalía.' },
+        { t: 'Víctimas múltiples', d: 'Coordinamos a varios afectados por un mismo esquema para fortalecer la acusación y compartir costos.' },
+      ],
+      sections: [
+        {
+          h: 'Si usted no está en Panamá',
+          p: ['Muchos fraudes afectan a inversionistas extranjeros. Coordinamos el poder apostillado, las traducciones y su declaración, y le informamos en español, inglés o alemán, para que pueda seguir el caso sin viajar.'],
+        },
+      ],
+      leads: ['john', 'jose'],
+      faqs: [
+        { q: '¿Cuál es la diferencia entre denunciar y querellar?', a: 'Con la denuncia, la Fiscalía conoce el hecho. Con la querella, la víctima pasa a ser parte del proceso, con abogado propio: puede proponer pruebas, pedir diligencias y recurrir decisiones como el archivo.' },
+        { q: 'Archivaron mi caso, ¿se puede hacer algo?', a: 'Muchas veces sí. Depende del motivo del archivo. Revisamos la resolución y el expediente y le decimos qué opciones hay para reactivarlo o reingresarlo.' },
+        { q: '¿Voy a recuperar mi dinero?', a: 'Ningún abogado serio puede garantizarlo. Lo que sí hacemos es usar todas las herramientas disponibles, incluidas las medidas sobre bienes y los acuerdos de reparación con garantías, para aumentar las posibilidades de recuperación.' },
+        { q: '¿Qué necesito para empezar?', a: 'Contratos, comprobantes de pago o transferencias, mensajes y correos con los responsables, y cualquier dato sobre ellos o sus empresas. Con eso evaluamos el caso en la primera consulta.' },
+      ],
+      related: ['litigation', 'cocounsel', 'corporate'],
+    },
+
+    succession: {
+      title: 'Abogados de sucesiones y herencias en Panamá | Ward International Lawyers',
+      description: 'Sucesiones testadas e intestadas en Panamá, declaratoria de herederos, inscripción de bienes, paz y salvo, conflictos entre herederos y herederos en el extranjero.',
+      eyebrow: 'Sucesiones',
+      h1: 'Sucesiones y herencias en Panamá',
+      lead: 'Tramitamos sucesiones con testamento y sin él, de principio a fin: desde la apertura del proceso hasta que los bienes quedan inscritos a nombre de los herederos.',
+      short: 'Sucesiones testadas e intestadas, herederos en el extranjero y conflictos familiares.',
+      intro: [
+        'Una sucesión mal planteada puede tardar años. Antes de presentar nada, revisamos qué bienes existen, a nombre de quién están inscritos, si hay testamento y quiénes son los herederos, para escoger la vía correcta desde el inicio.',
+        'Llevamos sucesiones sencillas y también casos complejos: varias generaciones de herederos sin inscribir, inmuebles ocupados por terceros, herederos en distintos países o familias en desacuerdo.',
+      ],
+      offerings: [
+        { t: 'Sucesión intestada', d: 'Proceso para declarar herederos cuando no hay testamento, según el orden que establece la ley.' },
+        { t: 'Sucesión testada', d: 'Apertura y ejecución del testamento, incluidos los trámites ante el Registro Público.' },
+        { t: 'Trámites para cerrar la sucesión', d: 'Paz y salvo de la DGI, certificados del Registro Público e inscripción de los bienes a nombre de los herederos.' },
+        { t: 'Inmuebles de la herencia', d: 'Recuperación de inmuebles ocupados (lanzamiento), división entre herederos y venta.' },
+        { t: 'Conflictos entre herederos', d: 'Negociación, mediación y, si es necesario, litigio para resolver desacuerdos familiares.' },
+        { t: 'Planificación sucesoria', d: 'Testamentos y fundaciones de interés privado para evitar que su familia pase por este proceso.' },
+      ],
+      sections: [
+        {
+          h: 'Herederos que viven fuera de Panamá',
+          p: ['Si usted hereda bienes en Panamá y vive en el extranjero, puede participar en la sucesión mediante un poder apostillado. Coordinamos los documentos desde su país y le mantenemos informado sin que tenga que viajar.'],
+        },
+      ],
+      leads: ['jose', 'john'],
+      faqs: [
+        { q: '¿Qué pasa si no hay testamento?', a: 'Se tramita una sucesión intestada: el juez declara herederos a los familiares en el orden que establece el Código Civil. Luego los bienes se inscriben a su nombre.' },
+        { q: '¿Cuánto tarda una sucesión?', a: 'Depende de los bienes, del número de herederos y de si hay acuerdo entre ellos. Al revisar los documentos le damos un estimado realista y le explicamos cada etapa.' },
+        { q: '¿Por qué piden un paz y salvo de la DGI?', a: 'Para inscribir los bienes a nombre de los herederos, el Registro Público exige acreditar que no hay deudas tributarias pendientes. Gestionamos ese trámite como parte de la sucesión.' },
+        { q: '¿Se puede evitar la sucesión?', a: 'Sí, con planificación. Una fundación de interés privado o una estructura societaria bien diseñada permiten transmitir bienes sin un proceso sucesorio largo.' },
+      ],
+      related: ['realestate', 'corporate', 'litigation'],
+    },
+
+    administrative: {
+      title: 'Abogados de derecho administrativo en Panamá | Ward International Lawyers',
+      description: 'Permisos y licencias, multas municipales, recursos contra resoluciones del Estado, procesos ante la CSS y demandas ante la Corte Suprema de Justicia de Panamá.',
+      eyebrow: 'Derecho administrativo',
+      h1: 'Derecho administrativo en Panamá',
+      lead: 'Cuando una autoridad le niega un permiso, le impone una multa o dicta una resolución que le perjudica, le ayudamos a impugnarla dentro de los plazos y a defender sus derechos frente al Estado.',
+      short: 'Permisos, multas, recursos contra el Estado y demandas ante la Corte Suprema.',
+      intro: [
+        'En materia administrativa, los plazos son cortos y los recursos deben presentarse en el orden correcto. Un recurso fuera de plazo puede cerrar la puerta a la defensa. Por eso actuamos rápido desde que recibe la notificación.',
+        'Asesoramos a empresas y personas frente a municipios, ministerios, la Caja de Seguro Social y otras entidades, tanto en la vía administrativa como ante la Corte Suprema de Justicia.',
+      ],
+      offerings: [
+        { t: 'Permisos y licencias', d: 'Trámite de permisos para establecimientos comerciales, acompañamiento en inspecciones y renovaciones.' },
+        { t: 'Multas y sanciones', d: 'Recursos de reconsideración y apelación contra multas municipales y sanciones administrativas.' },
+        { t: 'Caja de Seguro Social', d: 'Reclamaciones y recursos contra resoluciones de la CSS.' },
+        { t: 'Contencioso-administrativo', d: 'Demandas ante la Sala Tercera de la Corte Suprema de Justicia contra actos del Estado.' },
+        { t: 'Garantías constitucionales', d: 'Recursos ante la Corte Suprema de Justicia cuando una actuación viola derechos fundamentales.' },
+        { t: 'Contratación pública', d: 'Asesoría en procesos de contratación con el Estado y reclamos de proponentes.' },
+      ],
+      leads: ['john', 'jose'],
+      faqs: [
+        { q: 'Me pusieron una multa, ¿qué hago?', a: 'No deje pasar el plazo. Lo primero suele ser un recurso de reconsideración ante la misma autoridad y, si no prospera, la apelación. Envíenos la resolución y le decimos de inmediato qué plazo tiene.' },
+        { q: '¿Puedo demandar al Estado?', a: 'Sí. Una vez agotada la vía administrativa, los actos del Estado pueden impugnarse ante la Sala Tercera de lo Contencioso-Administrativo de la Corte Suprema de Justicia.' },
+        { q: '¿Me ayudan con los permisos de mi negocio?', a: 'Sí. Gestionamos los permisos y licencias que su establecimiento necesita y le acompañamos en las inspecciones.' },
+      ],
+      related: ['corporate', 'litigation', 'labor'],
+    },
+
     team: {
       title: 'Nuestro equipo | Abogados en Panamá | Ward International Lawyers',
       description: 'Conozca a los socios de Ward International Lawyers: John Robert Ward Ábrego, abogado litigante, y Jose Alberto Quiel, abogado corporativo y marítimo.',

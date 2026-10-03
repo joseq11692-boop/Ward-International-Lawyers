@@ -4,7 +4,7 @@ Sitio estático, multilingüe (español, inglés y alemán) y optimizado para Go
 
 ## Qué incluye
 
-- **60 páginas** (20 por idioma): portada, 7 áreas de práctica con página propia, corresponsalía para firmas extranjeras, equipo, perfil de cada socio, 5 guías con índice, contacto y privacidad.
+- **69 páginas** (23 por idioma): portada, 10 áreas de práctica con página propia, corresponsalía para firmas extranjeras, equipo, perfil de cada socio, 5 guías con índice, contacto y privacidad.
   - Litigios complejos y derecho corporativo son las áreas destacadas.
 - **SEO técnico completo**:
   - Título y descripción únicos por página, URL canónica y `hreflang` entre idiomas.

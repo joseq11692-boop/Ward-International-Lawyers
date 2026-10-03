@@ -33,13 +33,16 @@ Ward International Lawyers is a Panamanian law firm in Costa del Este focused on
 
 1. **Litigios complejos**: casos civiles, comerciales, penales y marítimos de alta complejidad.
 2. **Derecho corporativo**: sociedades anónimas, fundaciones, contratos y asesoría continua.
-3. **Corresponsal para firmas extranjeras**: litigios, debida diligencia y trámites en Panamá.
-4. **Arbitraje y mediación**: resolución alterna de disputas comerciales.
-5. **Cobro de deudas**: cobro judicial y extrajudicial, medidas cautelares.
-6. **Derecho marítimo**: abanderamiento de naves, hipotecas navales y licencias.
-7. **Migración y reubicación**: residencias, permisos de trabajo y naturalización.
-8. **Derecho laboral para empresas**: contratos, reglamento interno y conciliaciones.
-9. **Bienes raíces y propiedad horizontal**: compraventas y quejas administrativas.
+3. **Víctimas de fraude y estafa**: querellas penales, ampliación de querellas, casos archivados y recuperación de dinero.
+4. **Sucesiones y herencias**: sucesiones testadas e intestadas, herederos en el extranjero.
+5. **Derecho administrativo**: permisos, multas municipales, recursos ante la CSS y la Corte Suprema.
+6. **Corresponsal para firmas extranjeras**: litigios, debida diligencia y trámites en Panamá.
+7. **Arbitraje y mediación**: resolución alterna de disputas comerciales.
+8. **Cobro de deudas**: cobro judicial y extrajudicial, medidas cautelares.
+9. **Derecho marítimo**: abanderamiento de naves, hipotecas navales y licencias.
+10. **Migración y reubicación**: residencias, permisos de trabajo y naturalización.
+11. **Derecho laboral para empresas**: contratos, reglamento interno y conciliaciones.
+12. **Bienes raíces y propiedad horizontal**: compraventas y quejas administrativas.
 
 ## Preguntas y respuestas (publíquelas desde la cuenta de la firma)
 

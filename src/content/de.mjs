@@ -352,6 +352,102 @@ export default {
       related: ['immigration', 'litigation', 'corporate'],
     },
 
+    fraud: {
+      title: 'Anwalt für Betrugsopfer in Panama | Ward International Lawyers',
+      description: 'Wir vertreten Opfer von Betrug, Anlagebetrug und Erpressung in Panama: Strafanzeige, Nebenklage, Vermögenssicherung und Rückgewinnung von Geldern.',
+      eyebrow: 'Strafrecht',
+      h1: 'Opfer von Betrug in Panama',
+      lead: 'Wurden Sie in Panama betrogen, etwa bei einer Investition, einem Immobilienkauf oder einem Geschäft? Wir vertreten Sie als Nebenkläger im Strafverfahren, treiben das Verfahren voran und verfolgen die Rückgewinnung Ihres Geldes.',
+      short: 'Strafanzeigen wegen Betrug, Anlagebetrug und Erpressung; Rückgewinnung von Geldern.',
+      intro: [
+        'Eine bloße Anzeige reicht selten aus. Im panamaischen Anklagesystem kann das Opfer als Nebenkläger (Querellante) Beweise vorlegen, Ermittlungen beantragen, das Verfahren auf weitere Beteiligte ausweiten und sich gegen eine Einstellung wehren. Diese aktive Rolle bringt Verfahren voran.',
+        'Wir vertreten Privatpersonen und Unternehmen — in Panama und aus dem Ausland, auch aus Deutschland, Österreich und der Schweiz — bei Betrug, Anlagebetrug, Veruntreuung und Erpressung, auch bei Schemata mit vielen Geschädigten.',
+      ],
+      offerings: [
+        { t: 'Anzeige und Nebenklage', d: 'Wir erstellen Anzeige und Nebenklage mit geordneten Beweisen, damit sie zugelassen werden.' },
+        { t: 'Erweiterung der Klage', d: 'Wir beziehen Mittäter und Vermittler (Broker, Berater, Partner) ein und aktualisieren die Schadenshöhe.' },
+        { t: 'Eingestellte Verfahren', d: 'Wir prüfen die Einstellungsverfügung und suchen Wege, das Verfahren wiederaufzunehmen.' },
+        { t: 'Vermögenssicherung', d: 'Wir beantragen Maßnahmen zur Sicherung von Vermögen und Geldern der Beschuldigten.' },
+        { t: 'Wiedergutmachungsvereinbarungen', d: 'Wir verhandeln abgesicherte Zahlungsvereinbarungen und überwachen deren Erfüllung.' },
+        { t: 'Mehrere Geschädigte', d: 'Wir koordinieren mehrere Opfer desselben Schemas, um die Anklage zu stärken und Kosten zu teilen.' },
+      ],
+      sections: [
+        {
+          h: 'Wenn Sie im Ausland leben',
+          p: ['Viele Betrugsfälle treffen ausländische Anleger. Wir koordinieren die apostillierte Vollmacht, Übersetzungen und Ihre Aussage und berichten Ihnen auf Deutsch — ohne dass Sie anreisen müssen.'],
+        },
+      ],
+      leads: ['john'],
+      faqs: [
+        { q: 'Was ist der Unterschied zwischen Anzeige und Nebenklage?', a: 'Mit der Anzeige erfährt die Staatsanwaltschaft vom Sachverhalt. Mit der Nebenklage (Querella) wird das Opfer Verfahrensbeteiligter mit eigenem Anwalt und kann Beweise vorlegen, Ermittlungen beantragen und Entscheidungen wie eine Einstellung anfechten.' },
+        { q: 'Mein Verfahren wurde eingestellt. Was nun?', a: 'Oft gibt es Möglichkeiten. Das hängt vom Einstellungsgrund ab. Wir prüfen Verfügung und Akte und zeigen Ihnen die Optionen auf.' },
+        { q: 'Bekomme ich mein Geld zurück?', a: 'Kein seriöser Anwalt kann das garantieren. Wir nutzen alle verfügbaren Mittel, einschließlich Vermögenssicherung und abgesicherter Vereinbarungen, um die Chancen zu erhöhen.' },
+        { q: 'Was brauche ich für den Start?', a: 'Verträge, Zahlungs- oder Überweisungsbelege, Nachrichten und E-Mails mit den Verantwortlichen sowie alle Informationen über sie oder ihre Firmen.' },
+      ],
+      related: ['litigation', 'cocounsel', 'corporate'],
+    },
+
+    succession: {
+      title: 'Erbrecht in Panama | Nachlass & Erbschaft | Ward International Lawyers',
+      description: 'Nachlassverfahren in Panama mit und ohne Testament, Erbenfeststellung, Eintragung von Vermögen, Erbstreitigkeiten und Erben mit Wohnsitz im Ausland.',
+      eyebrow: 'Erbrecht',
+      h1: 'Erbrecht und Nachlass in Panama',
+      lead: 'Wir betreuen Nachlassverfahren mit und ohne Testament von Anfang bis Ende — bis das Vermögen auf die Erben eingetragen ist.',
+      short: 'Nachlassverfahren, Erben im Ausland und Erbstreitigkeiten.',
+      intro: [
+        'Ein falsch angelegtes Nachlassverfahren kann Jahre dauern. Bevor wir etwas einreichen, prüfen wir, welches Vermögen besteht, auf wen es eingetragen ist, ob es ein Testament gibt und wer die Erben sind.',
+        'Wir betreuen einfache und komplexe Nachlässe: mehrere Erbengenerationen ohne Eintragung, von Dritten besetzte Immobilien, Erben in verschiedenen Ländern oder zerstrittene Familien.',
+      ],
+      offerings: [
+        { t: 'Gesetzliche Erbfolge', d: 'Erbenfeststellung ohne Testament nach der gesetzlichen Reihenfolge.' },
+        { t: 'Testamentarische Erbfolge', d: 'Eröffnung und Vollzug des Testaments einschließlich Registerverfahren.' },
+        { t: 'Abschluss des Nachlasses', d: 'Steuerliche Unbedenklichkeitsbescheinigung der DGI, Registerauszüge und Eintragung auf die Erben.' },
+        { t: 'Nachlassimmobilien', d: 'Räumung besetzter Immobilien, Teilung unter Erben und Verkauf.' },
+        { t: 'Erbstreitigkeiten', d: 'Verhandlung, Mediation und notfalls gerichtliche Klärung.' },
+        { t: 'Nachfolgeplanung', d: 'Testamente und privatnützige Stiftungen, damit Ihrer Familie dieses Verfahren erspart bleibt.' },
+      ],
+      sections: [
+        {
+          h: 'Erben mit Wohnsitz in Deutschland, Österreich oder der Schweiz',
+          p: ['Erben Sie Vermögen in Panama, können Sie über eine apostillierte Vollmacht am Verfahren teilnehmen. Wir koordinieren die Unterlagen aus Ihrem Land und informieren Sie auf Deutsch.'],
+        },
+      ],
+      leads: ['john', 'jose'],
+      faqs: [
+        { q: 'Was gilt ohne Testament?', a: 'Es wird ein Verfahren der gesetzlichen Erbfolge eröffnet: Das Gericht stellt die Angehörigen in der Reihenfolge des Zivilgesetzbuchs als Erben fest. Danach wird das Vermögen auf sie eingetragen.' },
+        { q: 'Wie lange dauert ein Nachlassverfahren?', a: 'Das hängt vom Vermögen, der Zahl der Erben und ihrer Einigkeit ab. Nach Prüfung der Unterlagen geben wir Ihnen eine realistische Einschätzung.' },
+        { q: 'Lässt sich das Verfahren vermeiden?', a: 'Ja, mit Planung. Eine privatnützige Stiftung oder eine durchdachte Gesellschaftsstruktur ermöglicht die Vermögensübertragung ohne langes Nachlassverfahren.' },
+      ],
+      related: ['realestate', 'corporate', 'litigation'],
+    },
+
+    administrative: {
+      title: 'Verwaltungsrecht in Panama | Ward International Lawyers',
+      description: 'Genehmigungen und Lizenzen, Bußgelder, Rechtsbehelfe gegen Behördenentscheidungen und Klagen vor dem Obersten Gerichtshof Panamas.',
+      eyebrow: 'Verwaltungsrecht',
+      h1: 'Verwaltungsrecht in Panama',
+      lead: 'Verweigert eine Behörde eine Genehmigung, verhängt ein Bußgeld oder erlässt eine nachteilige Entscheidung, helfen wir Ihnen, fristgerecht dagegen vorzugehen.',
+      short: 'Genehmigungen, Bußgelder, Rechtsbehelfe und Klagen vor dem Obersten Gerichtshof.',
+      intro: [
+        'Im Verwaltungsrecht sind die Fristen kurz, und Rechtsbehelfe müssen in der richtigen Reihenfolge eingelegt werden. Deshalb handeln wir ab Zustellung schnell.',
+        'Wir beraten Unternehmen und Privatpersonen gegenüber Gemeinden, Ministerien, der Sozialversicherung und weiteren Behörden — im Verwaltungsverfahren und vor dem Obersten Gerichtshof.',
+      ],
+      offerings: [
+        { t: 'Genehmigungen und Lizenzen', d: 'Genehmigungen für Gewerbebetriebe, Begleitung bei Inspektionen und Verlängerungen.' },
+        { t: 'Bußgelder und Sanktionen', d: 'Widerspruch und Berufung gegen kommunale Bußgelder und Verwaltungssanktionen.' },
+        { t: 'Sozialversicherung (CSS)', d: 'Anträge und Rechtsbehelfe gegen Entscheidungen der Sozialversicherung.' },
+        { t: 'Verwaltungsgerichtsbarkeit', d: 'Klagen vor der Dritten Kammer des Obersten Gerichtshofs gegen staatliche Akte.' },
+        { t: 'Verfassungsrechtliche Rechtsbehelfe', d: 'Rechtsbehelfe vor dem Obersten Gerichtshof bei Verletzung von Grundrechten.' },
+        { t: 'Öffentliche Vergabe', d: 'Beratung bei öffentlichen Ausschreibungen und Bieterbeschwerden.' },
+      ],
+      leads: ['john', 'jose'],
+      faqs: [
+        { q: 'Ich habe ein Bußgeld erhalten. Was tun?', a: 'Lassen Sie die Frist nicht verstreichen. Meist ist der erste Schritt ein Widerspruch bei derselben Behörde, danach die Berufung. Senden Sie uns die Entscheidung, wir nennen Ihnen sofort die Frist.' },
+        { q: 'Kann ich gegen den Staat klagen?', a: 'Ja. Nach Ausschöpfung des Verwaltungswegs können staatliche Akte vor der Dritten Kammer des Obersten Gerichtshofs angefochten werden.' },
+      ],
+      related: ['corporate', 'litigation', 'labor'],
+    },
+
     team: {
       title: 'Unser Team | Anwälte in Panama | Ward International Lawyers',
       description: 'Die Partner von Ward International Lawyers: John Robert Ward Ábrego, deutschsprachiger Prozessanwalt, und Jose Alberto Quiel, Gesellschafts- und Seerecht.',

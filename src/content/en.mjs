@@ -352,6 +352,104 @@ export default {
       related: ['immigration', 'litigation', 'corporate'],
     },
 
+    fraud: {
+      title: 'Lawyers for Fraud Victims in Panama | Ward International Lawyers',
+      description: 'We represent victims of fraud, investment scams and extortion in Panama: criminal complaints, private prosecution, asset measures and recovery of funds.',
+      eyebrow: 'Criminal law',
+      h1: 'Fraud and scam victims in Panama',
+      lead: 'If you were defrauded in Panama, whether in an investment, a purchase or a business deal, we act as your private prosecutor in the criminal case to move it forward and pursue the recovery of your money.',
+      short: 'Criminal complaints for fraud, investment scams and extortion; recovery of funds.',
+      intro: [
+        'A police report alone is rarely enough. Under Panama’s accusatory criminal system, a victim who joins the case as private prosecutor (querellante) can submit evidence, request investigative steps, extend the case to other wrongdoers and challenge a decision to close it. That active role is what moves cases forward.',
+        'We represent individuals and companies, in Panama and abroad, in cases of fraud, investment scams, misappropriation and extortion, including schemes with multiple victims.',
+      ],
+      offerings: [
+        { t: 'Criminal complaint', d: 'We prepare and file the complaint with well-organized evidence so it is admitted.' },
+        { t: 'Extending the complaint', d: 'We add accomplices and intermediaries (brokers, agents, partners) and update the amount of the loss.' },
+        { t: 'Closed cases', d: 'We analyze the closing decision and look for ways to reopen or refile the case.' },
+        { t: 'Asset measures', d: 'We request measures to secure the suspects’ assets and funds while the case proceeds.' },
+        { t: 'Restitution agreements', d: 'We negotiate secured payment agreements and monitor compliance before the prosecutor.' },
+        { t: 'Multiple victims', d: 'We coordinate several victims of the same scheme to strengthen the case and share costs.' },
+      ],
+      sections: [
+        {
+          h: 'If you are outside Panama',
+          p: ['Many frauds target foreign investors. We coordinate the apostilled power of attorney, translations and your statement, and report to you in English, Spanish or German so you can follow the case without traveling.'],
+        },
+      ],
+      leads: ['john', 'jose'],
+      faqs: [
+        { q: 'What is the difference between reporting and filing a private prosecution?', a: 'A report informs the prosecutor of the facts. A private prosecution (querella) makes the victim a party to the case with their own lawyer, able to propose evidence, request steps and appeal decisions such as closing the case.' },
+        { q: 'My case was closed. Can anything be done?', a: 'Often, yes. It depends on why it was closed. We review the decision and the file and tell you the options to reopen or refile it.' },
+        { q: 'Will I get my money back?', a: 'No serious lawyer can guarantee it. What we do is use every available tool, including asset measures and secured restitution agreements, to improve the chances of recovery.' },
+        { q: 'What do I need to start?', a: 'Contracts, payment or transfer receipts, messages and emails with those responsible, and any information about them or their companies. With that we assess the case in the first consultation.' },
+      ],
+      related: ['litigation', 'cocounsel', 'corporate'],
+    },
+
+    succession: {
+      title: 'Probate and Inheritance Lawyers in Panama | Ward International Lawyers',
+      description: 'Testate and intestate probate in Panama, declaration of heirs, registration of assets, tax clearance, disputes among heirs and heirs living abroad.',
+      eyebrow: 'Probate',
+      h1: 'Probate and inheritance in Panama',
+      lead: 'We handle estates with or without a will from start to finish: from opening the proceeding until the assets are registered in the heirs’ names.',
+      short: 'Testate and intestate probate, heirs abroad and family disputes.',
+      intro: [
+        'A poorly framed probate can take years. Before filing anything, we review which assets exist, whose name they are registered in, whether there is a will and who the heirs are, so we choose the right route from the start.',
+        'We handle simple estates and complex ones: several generations of unregistered heirs, properties occupied by third parties, heirs in different countries or families in disagreement.',
+      ],
+      offerings: [
+        { t: 'Intestate probate', d: 'Proceedings to declare the heirs when there is no will, in the order set by law.' },
+        { t: 'Testate probate', d: 'Opening and executing the will, including filings at the Public Registry.' },
+        { t: 'Closing the estate', d: 'Tax clearance from the DGI, Public Registry certificates and registration of assets in the heirs’ names.' },
+        { t: 'Estate real estate', d: 'Recovering occupied properties (eviction), division among heirs and sale.' },
+        { t: 'Disputes among heirs', d: 'Negotiation, mediation and, if needed, litigation to resolve family disagreements.' },
+        { t: 'Estate planning', d: 'Wills and private interest foundations so your family does not have to go through probate.' },
+      ],
+      sections: [
+        {
+          h: 'Heirs living outside Panama',
+          p: ['If you inherit assets in Panama and live abroad, you can take part in the probate through an apostilled power of attorney. We coordinate the documents from your country and keep you informed without you having to travel.'],
+        },
+      ],
+      leads: ['jose', 'john'],
+      faqs: [
+        { q: 'What happens if there is no will?', a: 'An intestate probate is opened: the court declares the relatives as heirs in the order set by the Civil Code. The assets are then registered in their names.' },
+        { q: 'How long does probate take?', a: 'It depends on the assets, the number of heirs and whether they agree. After reviewing the documents we give you a realistic estimate and explain each stage.' },
+        { q: 'Why is a tax clearance certificate required?', a: 'To register assets in the heirs’ names, the Public Registry requires proof that there are no outstanding tax debts. We handle that step as part of the probate.' },
+        { q: 'Can probate be avoided?', a: 'Yes, with planning. A private interest foundation or a well-designed corporate structure allows assets to pass without lengthy probate.' },
+      ],
+      related: ['realestate', 'corporate', 'litigation'],
+    },
+
+    administrative: {
+      title: 'Administrative Law Attorneys in Panama | Ward International Lawyers',
+      description: 'Permits and licenses, municipal fines, appeals against government decisions, Social Security matters and actions before Panama’s Supreme Court.',
+      eyebrow: 'Administrative law',
+      h1: 'Administrative law in Panama',
+      lead: 'When an authority denies a permit, imposes a fine or issues a decision that harms you, we help you challenge it on time and defend your rights against the State.',
+      short: 'Permits, fines, appeals against the State and Supreme Court actions.',
+      intro: [
+        'In administrative matters, deadlines are short and appeals must be filed in the right order. A late appeal can end your defense. That is why we act quickly from the moment you are notified.',
+        'We advise companies and individuals before municipalities, ministries, the Social Security Fund and other agencies, both in administrative proceedings and before the Supreme Court of Justice.',
+      ],
+      offerings: [
+        { t: 'Permits and licenses', d: 'Permits for commercial establishments, support during inspections and renewals.' },
+        { t: 'Fines and penalties', d: 'Requests for reconsideration and appeals against municipal fines and administrative penalties.' },
+        { t: 'Social Security (CSS)', d: 'Claims and appeals against decisions of the Social Security Fund.' },
+        { t: 'Judicial review', d: 'Actions before the Third Chamber of the Supreme Court against acts of the State.' },
+        { t: 'Constitutional remedies', d: 'Actions before the Supreme Court when government conduct violates fundamental rights.' },
+        { t: 'Public procurement', d: 'Advice on government tenders and bidder claims.' },
+      ],
+      leads: ['john', 'jose'],
+      faqs: [
+        { q: 'I received a fine. What should I do?', a: 'Do not let the deadline pass. The first step is usually a request for reconsideration before the same authority and, if unsuccessful, an appeal. Send us the decision and we will tell you right away how much time you have.' },
+        { q: 'Can I sue the State?', a: 'Yes. Once administrative remedies are exhausted, acts of the State can be challenged before the Third Chamber (Administrative Litigation) of the Supreme Court.' },
+        { q: 'Can you help with my business permits?', a: 'Yes. We handle the permits and licenses your establishment needs and support you during inspections.' },
+      ],
+      related: ['corporate', 'litigation', 'labor'],
+    },
+
     team: {
       title: 'Our Team | Panama Attorneys | Ward International Lawyers',
       description: 'Meet the partners of Ward International Lawyers: John Robert Ward Ábrego, trial lawyer, and Jose Alberto Quiel, corporate and maritime attorney.',
