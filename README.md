@@ -77,6 +77,8 @@ Los archivos `_headers` y `_redirects` ya están incluidos.
 
 ## Después de publicar
 
+Los textos para el Perfil de Empresa en Google (descripción, servicios, preguntas y directorios) están listos para copiar en [`docs/perfil-de-google.md`](docs/perfil-de-google.md).
+
 1. **Google Search Console**: verifique el dominio y envíe `https://wardintlawyers.com/sitemap.xml`.
 2. **Perfil de Empresa en Google** (Google Maps):
    - Use exactamente el mismo nombre, dirección y teléfono del sitio.
