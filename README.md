@@ -4,19 +4,24 @@ Sitio estático, multilingüe (español, inglés y alemán) y optimizado para Go
 
 ## Qué incluye
 
-- **51 páginas** (17 por idioma): portada, 7 áreas de práctica con página propia, corresponsalía para firmas extranjeras, equipo, perfil de cada socio, 2 guías, contacto y privacidad.
+- **60 páginas** (20 por idioma): portada, 7 áreas de práctica con página propia, corresponsalía para firmas extranjeras, equipo, perfil de cada socio, 5 guías con índice, contacto y privacidad.
   - Litigios complejos y derecho corporativo son las áreas destacadas.
 - **SEO técnico completo**:
   - Título y descripción únicos por página, URL canónica y `hreflang` entre idiomas.
   - Sitemap con alternativas por idioma, `robots.txt` y `llms.txt` para buscadores con IA.
-  - Datos estructurados (Schema.org): `LegalService`, `Person`, `Service`, `FAQPage`, `Article` y `BreadcrumbList`.
+  - Datos estructurados (Schema.org): `LegalService`, `Person`, `Service`, `FAQPage`, `Article`, `ItemList` y `BreadcrumbList`.
+  - Títulos ajustados para que Google no los corte.
+  - Imagen propia para compartir en redes en cada página e idioma (LinkedIn, WhatsApp, Facebook).
 - **Conversión**:
   - Barra fija en el celular (Llamar / WhatsApp / Consulta) y botón flotante de WhatsApp.
   - Teléfonos y correos clicables.
-  - Formulario que envía la consulta por WhatsApp con el mensaje ya redactado.
+  - Mensajes de WhatsApp que indican el área según la página (por ejemplo, "consulta sobre litigios complejos").
+  - Formulario que envía la consulta por WhatsApp o por correo, con el mensaje ya redactado.
 - **Velocidad**: sin WordPress ni plugins. Imágenes WebP responsivas, tipografías alojadas en el propio sitio, CSS en línea y JS de 8 KB.
   - Lighthouse (móvil): Rendimiento 98–100, Accesibilidad 100, Buenas prácticas 100, SEO 100.
   - La portada pesa unos 160 KB, frente a 3,5 MB del sitio actual.
+- **Seguridad**: política de seguridad de contenido (CSP), HSTS y demás cabeceras, en `.htaccess` y `_headers`.
+- **Control de calidad**: GitHub Actions genera y verifica el sitio en cada cambio.
 - **Medición**: eventos de conversión (clics en WhatsApp, teléfono, correo y formulario) listos para Google Analytics 4, con banner de consentimiento.
 
 ## Estructura
@@ -29,6 +34,7 @@ src/
   content/de.mjs    Textos en alemán
   assets/           CSS, JS, imágenes y tipografías
   build.mjs         Generador del sitio
+  og.mjs            Generador de imágenes para redes (requiere ImageMagick)
   check.mjs         Verificador (enlaces rotos, títulos, H1, JSON-LD)
   serve.mjs         Servidor local para revisar
 public/             Sitio generado: ESTO es lo que se sube al hosting
@@ -43,6 +49,8 @@ public/             Sitio generado: ESTO es lo que se sube al hosting
    npm run check   # verifica que no haya errores
    npm run serve   # abre http://localhost:8080 para revisar
    ```
+3. Si cambió títulos de páginas, regenere las imágenes para redes con `npm run og` (requiere ImageMagick) y vuelva a ejecutar `npm run build`.
+4. Suba los cambios, incluida la carpeta `public/`. La verificación automática de GitHub falla si `public/` no está actualizada.
 
 Solo requiere Node.js 18 o superior; no hay dependencias que instalar.
 

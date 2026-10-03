@@ -1,9 +1,9 @@
 // Genera el sitio estático en /public. Uso: `npm run build`.
 import { createHash } from 'node:crypto';
-import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { guideKeys, people, practiceKeys, routes, site } from './config.mjs';
+import { guideKeys, people, practiceKeys, practiceNames, routes, site } from './config.mjs';
 import de from './content/de.mjs';
 import en from './content/en.mjs';
 import es from './content/es.mjs';
@@ -12,13 +12,15 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = join(ROOT, 'src');
 const OUT = join(ROOT, 'public');
 const content = { es, en, de };
-const BUILD_DATE = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10);
+const BUILD_DATE = site.updated;
+// Mensaje de WhatsApp de la página actual (incluye el área para calificar la consulta).
+let WA_MSG = '';
+function setWa(lang, area) {
+  const ui = content[lang].ui;
+  const name = practiceNames[lang][area] || '';
+  WA_MSG = area ? ui.waArea.replace('{area}', lang === 'de' ? name : name.toLowerCase()) : ui.waMessage;
+}
 
-const practiceNames = {
-  es: { litigation: 'Litigios complejos', corporate: 'Derecho corporativo', cocounsel: 'Corresponsalía para firmas', maritime: 'Derecho marítimo', immigration: 'Migración y reubicación', labor: 'Derecho laboral', realestate: 'Bienes raíces' },
-  en: { litigation: 'Complex litigation', corporate: 'Corporate law', cocounsel: 'Local counsel for law firms', maritime: 'Maritime law', immigration: 'Immigration & relocation', labor: 'Labor law', realestate: 'Real estate' },
-  de: { litigation: 'Prozessführung', corporate: 'Gesellschaftsrecht', cocounsel: 'Korrespondenzkanzlei', maritime: 'Seerecht', immigration: 'Einwanderung & Umzug', labor: 'Arbeitsrecht', realestate: 'Immobilienrecht' },
-};
 
 // ---------- utilidades ----------
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -26,6 +28,7 @@ const url = (key, lang) => '/' + routes[key][lang];
 const abs = (key, lang) => site.url + url(key, lang);
 const waLink = (msg) => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(msg)}`;
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
+const slug = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss').replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const images = {
   hero: { base: 'panama-city', widths: [768, 1280, 1600], w: 1600, h: 960 },
@@ -199,7 +202,7 @@ function footer(lang) {
       <div>
         <h2>${esc(ui.footerContact)}</h2>
         <ul>
-          <li><a href="${waLink(ui.waMessage)}" rel="noopener" target="_blank" data-loc="footer">WhatsApp ${esc(site.phone.display)}</a></li>
+          <li><a href="${waLink(WA_MSG)}" rel="noopener" target="_blank" data-loc="footer">WhatsApp ${esc(site.phone.display)}</a></li>
           <li><a href="tel:${site.phone.e164}" data-loc="footer">${esc(site.phone.display)}</a> · <a href="tel:${site.phone2.e164}" data-loc="footer">${esc(site.phone2.display)}</a></li>
           <li><a href="mailto:${site.email}" data-loc="footer">${site.email}</a></li>
           <li>${esc(site.address.street)}, ${esc(site.address.locality)}</li>
@@ -214,10 +217,10 @@ function footer(lang) {
 </footer>
 <nav class="mobile-bar" aria-label="${esc(ui.footerContact)}">
   <a href="tel:${site.phone.e164}" data-loc="mobile-bar">${icon.phone}<span>${esc(ui.ctaCall)}</span></a>
-  <a class="wa" href="${waLink(ui.waMessage)}" rel="noopener" target="_blank" data-loc="mobile-bar">${icon.wa}<span>${esc(ui.whatsappShort)}</span></a>
+  <a class="wa" href="${waLink(WA_MSG)}" rel="noopener" target="_blank" data-loc="mobile-bar">${icon.wa}<span>${esc(ui.whatsappShort)}</span></a>
   <a class="consult" href="${url('contact', lang)}#consulta">${icon.cal}<span>${esc(ui.consultShort)}</span></a>
 </nav>
-<a class="wa-float" href="${waLink(ui.waMessage)}" rel="noopener" target="_blank" aria-label="${esc(ui.ctaWhatsapp)}" data-loc="float">${icon.wa}</a>
+<a class="wa-float" href="${waLink(WA_MSG)}" rel="noopener" target="_blank" aria-label="${esc(ui.ctaWhatsapp)}" data-loc="float">${icon.wa}</a>
 <div class="notice" id="lang-notice" role="dialog" aria-label="Language" aria-live="polite"><p></p><div class="notice-actions"><a class="btn btn-gold" data-go href="#"></a><button class="btn btn-line" data-dismiss type="button"></button></div></div>
 ${site.gaId ? `<div class="notice" id="cookie-notice" role="dialog" aria-label="Cookies" aria-live="polite"><p>${esc(ui.cookies.text)} <a href="${url('privacy', lang)}">${esc(ui.privacy)}</a></p><div class="notice-actions"><button class="btn btn-gold" data-consent="yes" type="button">${esc(ui.cookies.accept)}</button><button class="btn btn-line" data-consent="no" type="button">${esc(ui.cookies.reject)}</button></div></div>` : ''}`;
 }
@@ -226,11 +229,11 @@ function crumbs(lang, trail) {
   return `<ol class="crumbs">${trail.map((t, i) => (i === trail.length - 1 ? `<li aria-current="page">${esc(t.name)}</li>` : `<li><a href="${t.href}">${esc(t.name)}</a></li>`)).join('')}</ol>`;
 }
 
-function ctaButtons(lang, { ghost = true } = {}) {
+function ctaButtons(lang) {
   const ui = content[lang].ui;
   return `<div class="btn-row">
     <a class="btn btn-gold" href="${url('contact', lang)}#consulta">${icon.cal}${esc(ui.ctaConsult)}</a>
-    <a class="btn ${ghost ? 'btn-wa' : 'btn-wa'}" href="${waLink(ui.waMessage)}" rel="noopener" target="_blank" data-loc="hero">${icon.wa}${esc(ui.ctaWhatsapp)}</a>
+    <a class="btn btn-wa" href="${waLink(WA_MSG)}" rel="noopener" target="_blank" data-loc="hero">${icon.wa}${esc(ui.ctaWhatsapp)}</a>
   </div>`;
 }
 
@@ -241,7 +244,7 @@ function finalCta(lang) {
     <h2>${esc(h.finalTitle)}</h2>
     <p>${esc(h.finalText)}</p>
     <div class="btn-row">
-      <a class="btn btn-wa" href="${waLink(ui.waMessage)}" rel="noopener" target="_blank" data-loc="final-cta">${icon.wa}${esc(ui.ctaWhatsapp)}</a>
+      <a class="btn btn-wa" href="${waLink(WA_MSG)}" rel="noopener" target="_blank" data-loc="final-cta">${icon.wa}${esc(ui.ctaWhatsapp)}</a>
       <a class="btn btn-ghost" href="tel:${site.phone.e164}" data-loc="final-cta">${icon.phone}${esc(site.phone.display)}</a>
     </div>
     <small>${esc(ui.form.confidential)} · ${esc(ui.trust[1])}</small>
@@ -288,8 +291,14 @@ function stepsSection(lang, dark = true) {
 let CSS = '';
 let JS_PATH = '';
 
+// Google muestra el nombre del sitio aparte: si el título es largo, se omite la marca para no truncar las palabras clave.
+const SUFFIX = ' | ' + site.name;
+const fitTitle = (t) => (t.length > 62 && t.endsWith(SUFFIX) ? t.slice(0, -SUFFIX.length) : t);
+
 function page({ lang, key, title, description, body, schema = [], ogType = 'website', preloadHero = false, noindex = false, path }) {
   const c = content[lang];
+  title = fitTitle(title);
+  const ogImage = key && existsSync(join(SRC, `assets/og/${lang}-${key}.jpg`)) ? `${site.url}/assets/og/${lang}-${key}.jpg` : `${site.url}/assets/img/og-image.jpg`;
   const canonical = path ? site.url + path : abs(key, lang);
   const alternates = key
     ? site.langs.map((l) => `<link rel="alternate" hreflang="${l}" href="${abs(key, l)}">`).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${abs(key, site.defaultLang)}">`
@@ -297,9 +306,10 @@ function page({ lang, key, title, description, body, schema = [], ogType = 'webs
   const cfg = {
     lang,
     wa: site.whatsapp,
-    waMessage: c.ui.waMessage,
+    waMessage: WA_MSG,
     gaId: site.gaId,
     formEndpoint: site.formEndpoint,
+    email: site.email,
     alternates: key ? Object.fromEntries(site.langs.map((l) => [l, url(key, l)])) : null,
     langSuggest: Object.fromEntries(site.langs.map((l) => [l, content[l].ui.langSuggest])),
     labels: { ...c.ui.form },
@@ -322,7 +332,8 @@ ${site.langs.filter((l) => l !== lang).map((l) => `<meta property="og:locale:alt
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${site.url}/assets/img/og-image.jpg">
+<meta property="og:image" content="${ogImage}">
+<meta property="og:image:alt" content="${esc(title)}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -352,6 +363,7 @@ ${footer(lang)}
 
 // ---------- plantillas de página ----------
 function renderHome(lang) {
+  setWa(lang, null);
   const c = content[lang];
   const h = c.pages.home;
   const ui = c.ui;
@@ -403,7 +415,8 @@ ${stepsSection(lang, false)}
 
 <section class="section"><div class="wrap">
   <div class="section-head"><span class="eyebrow">${esc(ui.nav.guides)}</span><h2>${esc(h.guidesTitle)}</h2></div>
-  <div class="grid-2">${guideKeys.map((k) => guideCard(k, lang)).join('')}</div>
+  <div class="grid-3">${guideKeys.slice(0, 3).map((k) => guideCard(k, lang)).join('')}</div>
+  <p style="margin-top:32px"><a class="link-arrow" href="${url('guides', lang)}">${esc(c.pages.guides.h1)}</a></p>
 </div></section>
 
 ${finalCta(lang)}`;
@@ -428,6 +441,7 @@ function pageHero(lang, trail, p, { cta = true, extra = '' } = {}) {
 }
 
 function renderPractice(lang) {
+  setWa(lang, null);
   const c = content[lang];
   const p = c.pages.practice;
   const trail = [{ name: c.ui.home, href: url('home', lang) }, { name: p.eyebrow, href: url('practice', lang) }];
@@ -441,6 +455,7 @@ ${finalCta(lang)}`;
 }
 
 function renderService(key, lang) {
+  setWa(lang, key);
   const c = content[lang];
   const ui = c.ui;
   const p = c.pages[key];
@@ -457,7 +472,7 @@ function renderService(key, lang) {
           <img src="${imgSrc(lead.img, 400)}" width="72" height="90" alt="${esc(lead.name)}" loading="lazy" style="width:72px;height:90px;object-fit:cover;border-radius:3px">
           <div><div class="person-role" style="margin:0">${esc(ui.leadBy)}</div><strong style="font:600 1.3rem/1.2 var(--serif)">${esc(lead.name)}</strong></div>
         </div>
-        <a class="btn btn-wa" href="${waLink(ui.waMessage)}" rel="noopener" target="_blank" data-loc="service-aside" style="width:100%;margin-bottom:10px">${icon.wa}${esc(ui.ctaWhatsapp)}</a>
+        <a class="btn btn-wa" href="${waLink(WA_MSG)}" rel="noopener" target="_blank" data-loc="service-aside" style="width:100%;margin-bottom:10px">${icon.wa}${esc(ui.ctaWhatsapp)}</a>
         <a class="btn btn-line" href="tel:${site.phone.e164}" data-loc="service-aside" style="width:100%">${icon.phone}${esc(site.phone.display)}</a>
       </aside>`;
   const body = `${pageHero(lang, trail, p)}
@@ -484,6 +499,11 @@ ${stepsSection(lang)}
   <h2>${esc(ui.faqTitle)}</h2>
   <div class="faq">${p.faqs.map((f, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>
 </div></section>
+
+${guideKeys.some((g) => c.pages[g].practice === key) ? `<section class="section"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">${esc(ui.nav.guides)}</span><h2>${esc(ui.relatedGuides)}</h2></div>
+  <div class="grid-3">${guideKeys.filter((g) => c.pages[g].practice === key).map((g) => guideCard(g, lang)).join('')}</div>
+</div></section>` : ''}
 
 <section class="section"><div class="wrap">
   <div class="section-head"><h2>${esc(ui.related)}</h2></div>
@@ -514,6 +534,7 @@ ${finalCta(lang)}`;
 }
 
 function renderTeam(lang) {
+  setWa(lang, null);
   const c = content[lang];
   const p = c.pages.team;
   const k = people.karina;
@@ -536,6 +557,7 @@ ${finalCta(lang)}`;
 }
 
 function renderPerson(key, lang) {
+  setWa(lang, null);
   const c = content[lang];
   const ui = c.ui;
   const p = c.pages[key];
@@ -548,7 +570,7 @@ function renderPerson(key, lang) {
     ${img(person.img, person.name, { sizes: '(max-width:900px) 100vw, 380px', eager: true })}
     <div class="contact-box">
       <h2>${esc(ui.directContact)}</h2>
-      <a href="${waLink(ui.waMessage)}" rel="noopener" target="_blank" data-loc="profile">${icon.wa}WhatsApp</a>
+      <a href="${waLink(WA_MSG)}" rel="noopener" target="_blank" data-loc="profile">${icon.wa}WhatsApp</a>
       <a href="tel:${person.phone.e164}" data-loc="profile">${icon.phone}${esc(person.phone.display)}</a>
       <a href="mailto:${person.email}" data-loc="profile">${icon.mail}${person.email}</a>
       <a href="${person.linkedin}" rel="noopener" target="_blank">${icon.linkedin}LinkedIn</a>
@@ -571,16 +593,21 @@ ${finalCta(lang)}`;
 }
 
 function renderGuides(lang) {
+  setWa(lang, null);
   const c = content[lang];
   const p = c.pages.guides;
   const trail = [{ name: c.ui.home, href: url('home', lang) }, { name: p.eyebrow, href: url('guides', lang) }];
   const body = `${pageHero(lang, trail, p, { cta: false })}
-<section class="section section-cream"><div class="wrap"><div class="grid-2">${guideKeys.map((k) => guideCard(k, lang)).join('')}</div></div></section>
+<section class="section section-cream"><div class="wrap"><div class="grid-3">${guideKeys.map((k) => guideCard(k, lang)).join('')}</div></div></section>
 ${finalCta(lang)}`;
-  return page({ lang, key: 'guides', title: p.title, description: p.description, body, schema: [breadcrumbSchema(trail)] });
+  return page({
+    lang, key: 'guides', title: p.title, description: p.description, body,
+    schema: [breadcrumbSchema(trail), { '@type': 'ItemList', itemListElement: guideKeys.map((k, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(k, lang), name: c.pages[k].h1 })) }],
+  });
 }
 
 function renderArticle(key, lang) {
+  setWa(lang, content[lang].pages[key].practice);
   const c = content[lang];
   const ui = c.ui;
   const g = c.pages[key];
@@ -588,9 +615,16 @@ function renderArticle(key, lang) {
   const date = new Intl.DateTimeFormat(c.locale.replace('_', '-'), { dateStyle: 'long' }).format(new Date(g.date + 'T12:00:00Z'));
   const trail = [{ name: ui.home, href: url('home', lang) }, { name: ui.nav.guides, href: url('guides', lang) }, { name: g.h1, href: url(key, lang) }];
   const meta = `<div class="meta"><span>${esc(ui.by)} <a href="${url(g.author, lang)}">${esc(author.name)}</a></span><span>${esc(ui.updated)}: <time datetime="${g.date}">${esc(date)}</time></span><span>${g.minutes} ${esc(ui.minRead)}</span></div>`;
+  const toc = [];
+  const prose = g.body.replace(/<h2>(.*?)<\/h2>/g, (_, t) => {
+    const id = slug(t);
+    toc.push(`<li><a href="#${id}">${t}</a></li>`);
+    return `<h2 id="${id}">${t}</h2>`;
+  });
   const body = `${pageHero(lang, trail, { eyebrow: practiceNames[lang][g.practice], h1: g.h1, lead: g.lead }, { cta: false, extra: meta })}
 <article class="section"><div class="wrap narrow">
-  <div class="prose">${g.body}</div>
+  <nav class="toc" aria-label="${esc(ui.toc)}"><strong>${esc(ui.toc)}</strong><ul>${toc.join('')}</ul></nav>
+  <div class="prose">${prose}</div>
   <div class="author-box">
     <img src="${imgSrc(author.img, 400)}" width="84" height="84" alt="${esc(author.name)}" loading="lazy">
     <div><strong>${esc(author.name)}</strong><p>${esc(c.pages[g.author].role)}</p><a class="link-arrow" href="${url(g.author, lang)}">${esc(ui.viewProfile)}</a></div>
@@ -609,9 +643,10 @@ ${finalCta(lang)}`;
         description: g.description,
         inLanguage: lang,
         datePublished: g.date,
+        wordCount: g.body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length,
         dateModified: g.date,
         mainEntityOfPage: abs(key, lang),
-        image: site.url + '/assets/img/og-image.jpg',
+        image: `${site.url}/assets/og/${lang}-${key}.jpg`,
         author: { '@id': site.url + '/#' + g.author, '@type': 'Person', name: author.name, url: abs(g.author, lang) },
         publisher: { '@id': site.url + '/#firm' },
       },
@@ -620,6 +655,7 @@ ${finalCta(lang)}`;
 }
 
 function renderContact(lang) {
+  setWa(lang, null);
   const c = content[lang];
   const ui = c.ui;
   const f = ui.form;
@@ -629,7 +665,7 @@ function renderContact(lang) {
 <section class="section"><div class="wrap contact-grid">
   <div>
     <ul class="contact-list">
-      <li>${icon.wa}<div><strong>WhatsApp</strong><a href="${waLink(ui.waMessage)}" rel="noopener" target="_blank" data-loc="contact">${esc(site.phone.display)}</a></div></li>
+      <li>${icon.wa}<div><strong>WhatsApp</strong><a href="${waLink(WA_MSG)}" rel="noopener" target="_blank" data-loc="contact">${esc(site.phone.display)}</a></div></li>
       <li>${icon.phone}<div><strong>${esc(ui.phones)}</strong><a href="tel:${site.phone.e164}" data-loc="contact">${esc(site.phone.display)}</a><br><a href="tel:${site.phone2.e164}" data-loc="contact">${esc(site.phone2.display)}</a></div></li>
       <li>${icon.mail}<div><strong>${esc(ui.email)}</strong><a href="mailto:${people.john.email}" data-loc="contact">${people.john.email}</a><br><a href="mailto:${people.jose.email}" data-loc="contact">${people.jose.email}</a></div></li>
       <li>${icon.pin}<div><strong>${esc(ui.office)}</strong>${esc(site.address.street)}<br>${esc(site.address.locality)}<br><a href="${site.mapsUrl}" rel="noopener" target="_blank" class="link-arrow" style="margin-top:8px">${esc(ui.openMaps)}</a></div></li>
@@ -654,7 +690,7 @@ function renderContact(lang) {
     <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
     <label class="check"><input type="checkbox" name="consent" required><span>${f.consent.replace('{privacy}', url('privacy', lang))}</span></label>
     <button class="btn ${site.formEndpoint ? 'btn-gold' : 'btn-wa'}" type="submit">${site.formEndpoint ? esc(f.submit) : icon.wa + esc(f.submitWa)}</button>
-    ${site.formEndpoint ? '' : `<p class="form-note">${esc(f.waNote)}</p>`}
+    ${site.formEndpoint ? '' : `<button class="btn btn-line" type="button" data-action="email" style="margin-top:10px">${icon.mail}${esc(f.submitEmail)}</button><p class="form-note">${esc(f.waNote)}</p>`}
     <p class="form-status" role="status" aria-live="polite"></p>
   </form>
 </div></section>
@@ -666,6 +702,7 @@ ${stepsSection(lang)}`;
 }
 
 function renderPrivacy(lang) {
+  setWa(lang, null);
   const c = content[lang];
   const p = c.pages.privacy;
   const trail = [{ name: c.ui.home, href: url('home', lang) }, { name: p.h1, href: url('privacy', lang) }];
@@ -675,6 +712,7 @@ function renderPrivacy(lang) {
 }
 
 function render404() {
+  setWa('es', null);
   const lang = 'es';
   const body = `<section class="notfound"><div class="wrap">
     <div class="num">404</div>
@@ -724,6 +762,23 @@ ${guideKeys.map((k) => `- [${c.pages[k].h1}](${abs(k, 'en')})`).join('\n')}
 `;
 }
 
+// Política de seguridad de contenido: solo se permite lo que el sitio usa de verdad.
+const formOrigin = site.formEndpoint ? new URL(site.formEndpoint).origin : '';
+const csp = [
+  "default-src 'self'",
+  `script-src 'self'${site.gaId ? ' https://www.googletagmanager.com' : ''}`,
+  "style-src 'self' 'unsafe-inline'",
+  `img-src 'self' data:${site.gaId ? ' https://*.google-analytics.com https://*.googletagmanager.com' : ''}`,
+  "font-src 'self'",
+  `connect-src 'self'${site.gaId ? ' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com' : ''}${formOrigin ? ' ' + formOrigin : ''}`,
+  'frame-src https://www.google.com',
+  `form-action 'self'${formOrigin ? ' ' + formOrigin : ''}`,
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'self'",
+  'upgrade-insecure-requests',
+].join('; ');
+
 const htaccess = `# Generado por src/build.mjs — Apache
 Options -Indexes
 DirectoryIndex index.html
@@ -748,6 +803,8 @@ Header always set X-Content-Type-Options "nosniff"
 Header always set X-Frame-Options "SAMEORIGIN"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set Content-Security-Policy "${csp}"
+Header always set Cross-Origin-Opener-Policy "same-origin"
 <FilesMatch "\\.(html|xml|txt)$">
 Header set Cache-Control "public, max-age=600, must-revalidate"
 </FilesMatch>
@@ -778,6 +835,8 @@ const netlifyHeaders = `/*
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: ${csp}
+  Cross-Origin-Opener-Policy: same-origin
 /assets/*.js
   Cache-Control: public, max-age=31536000, immutable
 /assets/fonts/*
@@ -808,6 +867,7 @@ function build() {
   mkdirSync(join(OUT, 'assets'), { recursive: true });
   cpSync(join(SRC, 'assets/img'), join(OUT, 'assets/img'), { recursive: true });
   cpSync(join(SRC, 'assets/fonts'), join(OUT, 'assets/fonts'), { recursive: true });
+  cpSync(join(SRC, 'assets/og'), join(OUT, 'assets/og'), { recursive: true });
 
   CSS = minifyCss(readFileSync(join(SRC, 'assets/styles.css'), 'utf8'));
   const js = readFileSync(join(SRC, 'assets/main.js'), 'utf8');

@@ -110,10 +110,7 @@
   var form = document.getElementById('contact-form');
   if (form) {
     var status = form.querySelector('.form-status');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (form.website && form.website.value) return; // honeypot
-      if (!form.reportValidity()) return;
+    function compose() {
       var d = new FormData(form);
       var areaSel = form.area;
       var areaText = areaSel && areaSel.selectedIndex > 0 ? areaSel.options[areaSel.selectedIndex].text : '';
@@ -124,7 +121,25 @@
         d.get('country') ? cfg.labels.country + ': ' + d.get('country') : '',
         areaText ? cfg.labels.area + ': ' + areaText : '',
       ].filter(Boolean).join('\n');
-      var text = [cfg.waMessage, details, d.get('message')].join('\n\n');
+      return { d: d, text: [cfg.waMessage, details, d.get('message')].join('\n\n') };
+    }
+    function ready() {
+      if (form.website && form.website.value) return false; // honeypot
+      return form.reportValidity();
+    }
+    var emailBtn = form.querySelector('[data-action=email]');
+    if (emailBtn) emailBtn.addEventListener('click', function () {
+      if (!ready()) return;
+      var m = compose();
+      track('generate_lead', { method: 'email_form', area: m.d.get('area') || '' });
+      window.location.href = 'mailto:' + cfg.email + '?subject=' + encodeURIComponent('Consulta web — ' + m.d.get('name')) + '&body=' + encodeURIComponent(m.text);
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!ready()) return;
+      var m = compose();
+      var d = m.d;
+      var text = m.text;
       track('generate_lead', { method: cfg.formEndpoint ? 'form' : 'whatsapp_form', area: d.get('area') || '' });
 
       if (cfg.formEndpoint) {

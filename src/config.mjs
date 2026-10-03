@@ -4,6 +4,8 @@ export const site = {
   name: 'Ward International Lawyers',
   legalName: 'Ward International Lawyers',
   defaultLang: 'es',
+  // Fecha de la última actualización de contenido (sitemap y pie de página).
+  updated: '2026-10-03',
   langs: ['es', 'en', 'de'],
 
   phone: { display: '(507) 6505-4281', e164: '+50765054281' },
@@ -86,9 +88,31 @@ export const routes = {
     en: 'en/insights/litigation-in-panama-for-foreign-companies/',
     de: 'de/ratgeber/prozessfuehrung-in-panama-fuer-auslaendische-unternehmen/',
   },
+  guideDebt: {
+    es: 'guias/como-cobrar-una-deuda-en-panama/',
+    en: 'en/insights/debt-collection-in-panama/',
+    de: 'de/ratgeber/forderungseinzug-in-panama/',
+  },
+  guideFoundation: {
+    es: 'guias/fundacion-de-interes-privado-en-panama/',
+    en: 'en/insights/panama-private-interest-foundation/',
+    de: 'de/ratgeber/privatstiftung-in-panama/',
+  },
+  guideShip: {
+    es: 'guias/abanderamiento-de-buques-en-panama/',
+    en: 'en/insights/panama-ship-registration/',
+    de: 'de/ratgeber/schiffsregistrierung-in-panama/',
+  },
   contact: { es: 'contacto/', en: 'en/contact/', de: 'de/kontakt/' },
   privacy: { es: 'privacidad/', en: 'en/privacy/', de: 'de/datenschutz/' },
 };
 
 export const practiceKeys = ['litigation', 'corporate', 'cocounsel', 'maritime', 'immigration', 'labor', 'realestate'];
-export const guideKeys = ['guideCompany', 'guideLitigation'];
+export const guideKeys = ['guideDebt', 'guideCompany', 'guideLitigation', 'guideFoundation', 'guideShip'];
+
+// Nombres cortos de cada área, para menús, formularios y tarjetas.
+export const practiceNames = {
+  es: { litigation: 'Litigios complejos', corporate: 'Derecho corporativo', cocounsel: 'Corresponsalía para firmas', maritime: 'Derecho marítimo', immigration: 'Migración y reubicación', labor: 'Derecho laboral', realestate: 'Bienes raíces' },
+  en: { litigation: 'Complex litigation', corporate: 'Corporate law', cocounsel: 'Local counsel for law firms', maritime: 'Maritime law', immigration: 'Immigration & relocation', labor: 'Labor law', realestate: 'Real estate' },
+  de: { litigation: 'Prozessführung', corporate: 'Gesellschaftsrecht', cocounsel: 'Korrespondenzkanzlei', maritime: 'Seerecht', immigration: 'Einwanderung & Umzug', labor: 'Arbeitsrecht', realestate: 'Immobilienrecht' },
+};

@@ -23,6 +23,8 @@ export default {
     leadBy: 'Who handles your matter',
     faqTitle: 'Frequently asked questions',
     related: 'Related practice areas',
+    relatedGuides: 'Related insights',
+    toc: 'In this guide',
     whatWeDo: 'What we do',
     howWeWork: 'How we work',
     steps: [
@@ -55,6 +57,7 @@ export default {
     langSuggest: { text: 'This website is available in English.', go: 'View in English', dismiss: 'Close' },
     cookies: { text: 'We use analytics cookies to understand how the site is used and to improve it.', accept: 'Accept', reject: 'Decline' },
     waMessage: 'Hello, I am contacting you from wardintlawyers.com. I would like to ask about a legal matter.',
+    waArea: 'Hello, I am contacting you from wardintlawyers.com. I would like to ask about {area}.',
     form: {
       title: 'Tell us about your matter',
       intro: 'Fill in the form and we will get back to you. All information is treated confidentially.',
@@ -69,6 +72,7 @@ export default {
       consent: 'I accept the <a href="{privacy}">privacy policy</a>.',
       submit: 'Send enquiry',
       submitWa: 'Send via WhatsApp',
+      submitEmail: 'Send by email instead',
       sending: 'Sending…',
       ok: 'Thank you. We have received your message and will contact you shortly.',
       error: 'We could not send the form. Please message us on WhatsApp or by email.',
@@ -410,7 +414,7 @@ export default {
     },
 
     guideCompany: {
-      title: 'How to Incorporate a Company in Panama: Step-by-Step Guide (2026)',
+      title: 'How to Incorporate a Company in Panama: Step-by-Step Guide',
       description: 'How to incorporate a Panama corporation: requirements, steps and ongoing obligations — registered agent, Public Registry, tax ID and bank account.',
       h1: 'How to incorporate a company in Panama: a step-by-step guide',
       lead: 'The Panama corporation (sociedad anónima) is one of the most widely used corporate vehicles in the world. Here is how it is set up, what you need and what it requires afterwards.',
@@ -467,7 +471,7 @@ export default {
     },
 
     guideLitigation: {
-      title: 'Litigation in Panama for Foreign Companies: What You Need to Know',
+      title: 'Litigation in Panama for Foreign Companies: What to Know',
       description: 'Guide for foreign companies with disputes in Panama: powers of attorney, apostilles, translations, arbitration, foreign judgments, maritime courts and costs.',
       h1: 'Litigation in Panama for foreign companies: what you need to know',
       lead: 'If your company has a dispute in Panama, these are the questions to ask before taking the first step.',
@@ -507,6 +511,138 @@ export default {
 <li>Information on the opposing party’s assets in Panama.</li>
 <li>Apostilled power of attorney in favor of your lawyer.</li>
 <li>A clear objective and an approximate budget.</li>
+</ul>
+`,
+    },
+
+    guideDebt: {
+      title: 'Debt Collection in Panama: Legal Options and Asset Attachment',
+      description: 'How to collect a debt from a company in Panama: demand letter, mediation, executive proceedings, attachment of assets and what to do as a foreign creditor.',
+      h1: 'How to collect a debt from a company in Panama',
+      lead: 'Unpaid invoices, loans or breached contracts: these are the legal tools to recover your money in Panama, and the order in which to use them.',
+      author: 'john',
+      date: '2026-10-03',
+      minutes: 6,
+      practice: 'litigation',
+      body: `
+<h2>1. Gather and organize the evidence</h2>
+<p>Before taking any step, collect the contract, invoices, purchase orders, delivery receipts and any communications in which the debtor acknowledges the debt. The quality of that documentation determines the fastest collection route.</p>
+
+<h2>2. Formal demand letter</h2>
+<p>A demand letter signed by a lawyer records the claim, sets a deadline for payment and is often enough to open a negotiation. It is also the moment to propose a documented payment plan, ideally backed by an instrument that makes collection easier if the debtor defaults again.</p>
+
+<h2>3. Conciliation or mediation</h2>
+<p>If there is a business relationship worth preserving, mediation can produce an agreement at lower cost and in less time. Panama has conciliation and arbitration centers, such as the one run by the Panama Chamber of Commerce, Industries and Agriculture. A well-drafted settlement can be enforced if the debtor fails again.</p>
+
+<h2>4. Executive proceedings: when the debt is documented in an enforceable instrument</h2>
+<p>If the debt is set out in a document that the law treats as an enforceable instrument, such as a promissory note or bill of exchange, the creditor can go straight to executive proceedings. This is the fastest route because the court starts from the premise that the debt exists and the debtor’s defenses are limited.</p>
+
+<h2>5. Ordinary proceedings: when the debt must be proven</h2>
+<p>Without an enforceable instrument, for example with unaccepted invoices or a contract whose obligations are disputed, you need proceedings to prove the existence and amount of the debt. The resulting judgment can then be enforced.</p>
+
+<h2>6. Interim measures: protecting the debtor’s assets</h2>
+<p>The biggest risk in collection is not losing the case, but winning it and finding no assets. Panamanian law allows the attachment of the debtor’s assets (bank accounts, real estate, vehicles, vessels, receivables) from the outset, subject to requirements and usually a bond. Investigating the debtor’s assets in advance is an essential part of the strategy.</p>
+
+<h2>7. If you are outside Panama</h2>
+<ul>
+<li>Grant a power of attorney before a notary in your country, apostilled (or legalized).</li>
+<li>Documents in other languages must be translated into Spanish by an authorized public translator in Panama.</li>
+<li>If you already have a foreign judgment or award against the debtor, you can seek its recognition in Panama (exequatur) and enforce it against assets in the country.</li>
+</ul>
+
+<h2>8. Do not wait</h2>
+<p>Collection actions are subject to limitation periods that vary by type of obligation. And the longer you wait, the more likely the debtor will dispose of assets or enter insolvency proceedings. Seek advice early.</p>
+`,
+    },
+
+    guideFoundation: {
+      title: 'Panama Private Interest Foundation: What It Is and How It Works',
+      description: 'Guide to the Panama private interest foundation (Law 25 of 1995): structure, uses in wealth and succession planning, requirements and ongoing obligations.',
+      h1: 'Panama private interest foundation: what it is and how it works',
+      lead: 'The private interest foundation is one of the most widely used vehicles for organizing and protecting family wealth. Here is how it works and when it makes sense.',
+      author: 'jose',
+      date: '2026-10-03',
+      minutes: 6,
+      practice: 'corporate',
+      body: `
+<h2>What is a private interest foundation?</h2>
+<p>It is a legal entity created under Law 25 of 1995, to which a founder contributes assets to be managed for the benefit of the persons or purposes the founder determines. Unlike a corporation, a foundation has no shareholders or owners: the assets belong to the foundation itself.</p>
+
+<h2>Who is involved</h2>
+<ul>
+<li><strong>Founder:</strong> creates the foundation and contributes the initial endowment. It can be an individual or a company, of any nationality.</li>
+<li><strong>Foundation council:</strong> manages the foundation and carries out its purposes. It consists of three individuals or one legal entity.</li>
+<li><strong>Beneficiaries:</strong> the persons who will receive the benefits, under the rules set by the founder.</li>
+<li><strong>Protector (optional):</strong> an oversight role that can supervise the foundation council.</li>
+<li><strong>Registered agent:</strong> a lawyer or law firm in Panama, required by law.</li>
+</ul>
+
+<h2>What it is used for</h2>
+<ul>
+<li><strong>Succession planning:</strong> the founder decides during their lifetime how and when assets will be distributed, which can avoid lengthy probate and disputes among heirs.</li>
+<li><strong>Organizing family wealth:</strong> holding investments, company shares or real estate under a single structure with clear rules.</li>
+<li><strong>Continuity:</strong> the foundation does not end on the death of the founder or council members.</li>
+</ul>
+
+<h2>The founding documents</h2>
+<p><strong>The foundation charter</strong> contains the essential data (name, initial endowment, council, registered agent, purposes) and is registered at the Public Registry. <strong>The regulations (by-laws)</strong> are a private document in which the founder sets out in detail who the beneficiaries are and how assets are distributed. This split combines public registration with privacy for family matters.</p>
+
+<h2>Requirements and limits</h2>
+<ul>
+<li>Minimum initial endowment of ten thousand US dollars, contributed in cash or other assets.</li>
+<li>The foundation may not habitually carry on for-profit commercial activities, although it may own shares in companies that do.</li>
+<li>It must pay an annual franchise tax and keep a registered agent.</li>
+<li>The registered agent must know and register the beneficial owners under current rules.</li>
+</ul>
+
+<h2>Foundation or corporation?</h2>
+<p>To run a business, the natural tool is a corporation. To preserve and pass on wealth, a foundation is usually better suited. A common structure combines both: the foundation owns the shares of one or more operating companies.</p>
+
+<h2>Before you set one up</h2>
+<p>A foundation is only as good as its regulations. It is worth thinking carefully about scenarios such as the founder’s death, minor beneficiaries or disputes among heirs, and about the tax obligations of the founder and beneficiaries in their countries of residence.</p>
+`,
+    },
+
+    guideShip: {
+      title: 'Panama Ship Registration: Requirements and Steps',
+      description: 'How to register a ship or yacht under the Panamanian flag: provisional and permanent registration, documents, naval mortgages and annual obligations.',
+      h1: 'Panama ship registration: requirements and steps',
+      lead: 'Panama operates the world’s largest ship registry. Here is how the process to register your vessel under the Panamanian flag works.',
+      author: 'jose',
+      date: '2026-10-03',
+      minutes: 5,
+      practice: 'maritime',
+      body: `
+<h2>Why register in Panama</h2>
+<p>The Panamanian registry is open to owners of any nationality, has an extensive network of consular and technical offices worldwide and offers a naval mortgage regime recognized by international lenders. It is common for the vessel to be owned by a Panama corporation set up for that purpose.</p>
+
+<h2>Who is involved</h2>
+<ul>
+<li><strong>Panama Maritime Authority (AMP)</strong>, through the Directorate General of Merchant Marine: issues the navigation patent and radio licenses.</li>
+<li><strong>Panama Public Registry:</strong> registers title and naval mortgages.</li>
+<li><strong>Consulates and AMP technical offices abroad:</strong> allow procedures to start without the vessel being in Panama.</li>
+</ul>
+
+<h2>Step by step</h2>
+<ol>
+<li><strong>Ownership structure.</strong> Decide who the registered owner will be — often a Panama corporation.</li>
+<li><strong>Vessel documents.</strong> Title or bill of sale, deletion certificate from the previous registry (or the relevant authorization) and technical tonnage and safety certificates.</li>
+<li><strong>Provisional registration.</strong> Obtain the provisional navigation patent and radio license, which allow the vessel to operate while the process is completed.</li>
+<li><strong>Title registration.</strong> The title is registered at the Public Registry.</li>
+<li><strong>Permanent patent.</strong> Once requirements are met, the AMP issues the permanent navigation patent.</li>
+</ol>
+
+<h2>Naval mortgages</h2>
+<p>Mortgages over Panamanian vessels are registered at the Public Registry and can be preliminarily registered through consulates, which protects the lender from the moment of closing. That is why the Panamanian registry is common in ship finance.</p>
+
+<h2>Bareboat charter registration</h2>
+<p>Panamanian law allows the registration of bareboat-chartered vessels that keep their original registry in another country, and the reverse situation, subject to the applicable requirements.</p>
+
+<h2>Obligations after registration</h2>
+<ul>
+<li>Payment of the vessel’s annual fees and taxes.</li>
+<li>Keeping safety certificates and crew documents (seafarer licenses) current.</li>
+<li>If the vessel is owned by a Panama company, meeting the company’s obligations: annual franchise tax, registered agent and beneficial ownership register.</li>
 </ul>
 `,
     },

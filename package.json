@@ -5,6 +5,7 @@
   "description": "Sitio web de Ward International Lawyers (estático, multilingüe ES/EN/DE).",
   "scripts": {
     "build": "node src/build.mjs",
+    "og": "node src/og.mjs",
     "serve": "node src/serve.mjs",
     "check": "node src/check.mjs"
   },

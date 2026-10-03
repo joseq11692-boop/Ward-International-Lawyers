@@ -23,6 +23,8 @@ export default {
     leadBy: 'Quién lleva su caso',
     faqTitle: 'Preguntas frecuentes',
     related: 'Áreas relacionadas',
+    relatedGuides: 'Guías relacionadas',
+    toc: 'En esta guía',
     whatWeDo: 'Qué hacemos',
     howWeWork: 'Cómo trabajamos',
     steps: [
@@ -55,6 +57,7 @@ export default {
     langSuggest: { text: 'Este sitio está disponible en español.', go: 'Ver en español', dismiss: 'Cerrar' },
     cookies: { text: 'Usamos cookies de analítica para entender cómo se usa el sitio y mejorarlo.', accept: 'Aceptar', reject: 'Rechazar' },
     waMessage: 'Hola, me comunico desde wardintlawyers.com. Quisiera hacer una consulta.',
+    waArea: 'Hola, me comunico desde wardintlawyers.com. Quisiera hacer una consulta sobre {area}.',
     form: {
       title: 'Cuéntenos su caso',
       intro: 'Complete el formulario y le contactaremos. Toda la información se trata de forma confidencial.',
@@ -69,6 +72,7 @@ export default {
       consent: 'Acepto la <a href="{privacy}">política de privacidad</a>.',
       submit: 'Enviar consulta',
       submitWa: 'Enviar por WhatsApp',
+      submitEmail: 'Prefiero enviarlo por correo',
       sending: 'Enviando…',
       ok: 'Gracias. Recibimos su mensaje y le contactaremos a la brevedad.',
       error: 'No pudimos enviar el formulario. Escríbanos por WhatsApp o al correo indicado.',
@@ -412,7 +416,7 @@ export default {
     },
 
     guideCompany: {
-      title: 'Cómo constituir una sociedad anónima en Panamá: guía paso a paso (2026)',
+      title: 'Cómo constituir una sociedad en Panamá: guía paso a paso',
       description: 'Requisitos, pasos y obligaciones para constituir una sociedad anónima en Panamá: agente residente, Registro Público, RUC, cuenta bancaria y beneficiario final.',
       h1: 'Cómo constituir una sociedad anónima en Panamá: guía paso a paso',
       lead: 'La sociedad anónima panameña es uno de los vehículos corporativos más usados del mundo. Le explicamos cómo se crea, qué se necesita y qué obligaciones tiene después.',
@@ -509,6 +513,138 @@ export default {
 <li>Información sobre los bienes de la contraparte en Panamá.</li>
 <li>Poder apostillado a favor de su abogado.</li>
 <li>Objetivo claro y presupuesto aproximado.</li>
+</ul>
+`,
+    },
+
+    guideDebt: {
+      title: 'Cómo cobrar una deuda a una empresa en Panamá',
+      description: 'Cómo cobrar una deuda en Panamá: carta de cobro, mediación, proceso ejecutivo, secuestro de bienes y qué hacer si el acreedor está en el extranjero.',
+      h1: 'Cómo cobrar una deuda a una empresa en Panamá',
+      lead: 'Facturas impagas, préstamos o contratos incumplidos: estas son las herramientas legales para recuperar su dinero en Panamá y el orden en que conviene usarlas.',
+      author: 'john',
+      date: '2026-10-03',
+      minutes: 6,
+      practice: 'litigation',
+      body: `
+<h2>1. Reúna y ordene la prueba</h2>
+<p>Antes de cualquier gestión, conviene tener a mano el contrato, las facturas, las órdenes de compra, los comprobantes de entrega y las comunicaciones en las que el deudor reconoce la deuda. La calidad de esa documentación determina la vía de cobro más rápida.</p>
+
+<h2>2. Carta de cobro formal</h2>
+<p>Una carta de requerimiento firmada por un abogado deja constancia de la reclamación, fija un plazo para pagar y muchas veces basta para abrir una negociación. Es también el momento de proponer un plan de pagos documentado, idealmente respaldado por un título que facilite el cobro si vuelve a incumplirse.</p>
+
+<h2>3. Conciliación o mediación</h2>
+<p>Si existe una relación comercial que vale la pena conservar, la mediación permite llegar a un acuerdo con menos costo y en menos tiempo. En Panamá funcionan centros de conciliación y arbitraje, como el de la Cámara de Comercio, Industrias y Agricultura de Panamá. Un acuerdo bien redactado puede hacerse cumplir si el deudor vuelve a fallar.</p>
+
+<h2>4. Proceso ejecutivo: cuando la deuda consta en un título</h2>
+<p>Si la deuda consta en un documento que la ley considera título ejecutivo, como un pagaré o una letra de cambio, el acreedor puede acudir directamente al proceso ejecutivo. Es la vía más rápida, porque el juez parte de que la deuda existe y el deudor tiene defensas limitadas.</p>
+
+<h2>5. Proceso de conocimiento: cuando hay que probar la deuda</h2>
+<p>Si no hay título ejecutivo, por ejemplo cuando se trata de facturas no aceptadas o de un contrato con obligaciones discutidas, es necesario un proceso en el que se pruebe la existencia y el monto de la deuda. La sentencia que se obtenga permite luego ejecutar.</p>
+
+<h2>6. Medidas cautelares: proteger los bienes del deudor</h2>
+<p>El mayor riesgo en un cobro no es perder el juicio, sino ganarlo y no encontrar bienes. La ley panameña permite pedir el secuestro de bienes del deudor (cuentas, inmuebles, vehículos, naves, créditos) desde el inicio, sujeto a requisitos y normalmente a una caución. Investigar antes qué bienes tiene el deudor es parte esencial de la estrategia.</p>
+
+<h2>7. Si usted está fuera de Panamá</h2>
+<ul>
+<li>Otorgue un poder ante notario en su país, apostillado (o legalizado).</li>
+<li>Los documentos en otro idioma requieren traducción al español por un traductor público autorizado en Panamá.</li>
+<li>Si ya tiene una sentencia o un laudo extranjero contra el deudor, puede pedir su reconocimiento en Panamá (exequátur) y ejecutarlo contra bienes en el país.</li>
+</ul>
+
+<h2>8. No deje pasar el tiempo</h2>
+<p>Las acciones de cobro prescriben y los plazos varían según el tipo de obligación. Además, cuanto más tiempo pasa, más probable es que el deudor disponga de sus bienes o entre en un proceso de insolvencia. Consulte cuanto antes.</p>
+`,
+    },
+
+    guideFoundation: {
+      title: 'Fundación de interés privado en Panamá: guía completa',
+      description: 'Guía sobre la fundación de interés privado en Panamá (Ley 25 de 1995): estructura, usos en planificación patrimonial y sucesoria, requisitos y obligaciones.',
+      h1: 'Fundación de interés privado en Panamá: qué es y para qué sirve',
+      lead: 'La fundación de interés privado es una de las figuras más utilizadas para ordenar y proteger un patrimonio familiar. Le explicamos cómo funciona y cuándo conviene.',
+      author: 'jose',
+      date: '2026-10-03',
+      minutes: 6,
+      practice: 'corporate',
+      body: `
+<h2>Qué es una fundación de interés privado</h2>
+<p>Es una persona jurídica creada por la Ley 25 de 1995, a la que un fundador aporta bienes para que sean administrados en beneficio de las personas o fines que él determine. A diferencia de una sociedad anónima, la fundación no tiene accionistas ni dueños: el patrimonio pertenece a la propia fundación.</p>
+
+<h2>Quiénes participan</h2>
+<ul>
+<li><strong>Fundador:</strong> quien crea la fundación y aporta el patrimonio inicial. Puede ser una persona natural o jurídica, de cualquier nacionalidad.</li>
+<li><strong>Consejo fundacional:</strong> administra la fundación y cumple sus fines. Se integra por tres personas naturales o por una persona jurídica.</li>
+<li><strong>Beneficiarios:</strong> las personas que recibirán los beneficios, según las reglas que fije el fundador.</li>
+<li><strong>Protector (opcional):</strong> una figura de control que puede supervisar al consejo fundacional.</li>
+<li><strong>Agente residente:</strong> un abogado o firma de abogados en Panamá, obligatorio por ley.</li>
+</ul>
+
+<h2>Para qué se usa</h2>
+<ul>
+<li><strong>Planificación sucesoria:</strong> el fundador define en vida cómo y cuándo se distribuirán los bienes, lo que puede evitar procesos sucesorios largos y conflictos entre herederos.</li>
+<li><strong>Ordenar el patrimonio familiar:</strong> concentrar inversiones, acciones de sociedades o inmuebles bajo una sola estructura con reglas claras.</li>
+<li><strong>Continuidad:</strong> la fundación no se extingue por el fallecimiento del fundador ni de los miembros del consejo.</li>
+</ul>
+
+<h2>Documentos que la forman</h2>
+<p><strong>El acta fundacional</strong> contiene los datos esenciales (nombre, patrimonio inicial, consejo fundacional, agente residente, fines) y se inscribe en el Registro Público. <strong>El reglamento</strong> es un documento privado en el que el fundador establece en detalle quiénes son los beneficiarios y cómo se distribuyen los bienes. Esa división permite combinar la publicidad registral con la privacidad de los asuntos familiares.</p>
+
+<h2>Requisitos y límites</h2>
+<ul>
+<li>Patrimonio inicial mínimo de diez mil dólares, que puede aportarse en dinero u otros bienes.</li>
+<li>La fundación no puede dedicarse habitualmente a actividades comerciales con fines de lucro, aunque sí puede ser dueña de acciones de sociedades que sí las realicen.</li>
+<li>Debe pagar una tasa única anual y mantener un agente residente.</li>
+<li>El agente residente debe conocer y registrar a los beneficiarios finales, conforme a la normativa vigente.</li>
+</ul>
+
+<h2>¿Fundación o sociedad anónima?</h2>
+<p>Si el objetivo es operar un negocio, la herramienta natural es la sociedad anónima. Si el objetivo es conservar y transmitir un patrimonio, la fundación suele ser más adecuada. Una estructura habitual combina ambas: la fundación es la dueña de las acciones de una o varias sociedades operativas.</p>
+
+<h2>Antes de crearla</h2>
+<p>Una fundación es tan buena como su reglamento. Vale la pena pensar con calma en escenarios como el fallecimiento del fundador, beneficiarios menores de edad o conflictos entre herederos, y considerar también las obligaciones fiscales del fundador y de los beneficiarios en sus países de residencia.</p>
+`,
+    },
+
+    guideShip: {
+      title: 'Abanderamiento de buques en Panamá: requisitos y pasos',
+      description: 'Cómo registrar un buque o yate bajo bandera panameña: registro provisional y permanente, documentos, hipoteca naval y obligaciones anuales.',
+      h1: 'Abanderamiento de buques en Panamá: requisitos y pasos',
+      lead: 'Panamá tiene el registro de buques más grande del mundo. Así funciona el proceso para inscribir su nave bajo bandera panameña.',
+      author: 'jose',
+      date: '2026-10-03',
+      minutes: 5,
+      practice: 'maritime',
+      body: `
+<h2>Por qué abanderar en Panamá</h2>
+<p>El registro panameño está abierto a propietarios de cualquier nacionalidad, tiene una amplia red de oficinas consulares y técnicas en el mundo y ofrece un régimen de hipoteca naval reconocido por los financistas internacionales. Es habitual que la nave sea propiedad de una sociedad anónima panameña creada para ese fin.</p>
+
+<h2>Quién interviene</h2>
+<ul>
+<li><strong>Autoridad Marítima de Panamá (AMP)</strong>, a través de la Dirección General de Marina Mercante: expide la patente de navegación y las licencias de radio.</li>
+<li><strong>Registro Público de Panamá:</strong> inscribe el título de propiedad y las hipotecas navales.</li>
+<li><strong>Consulados y oficinas técnicas de la AMP en el exterior:</strong> permiten iniciar trámites sin que la nave esté en Panamá.</li>
+</ul>
+
+<h2>Paso a paso</h2>
+<ol>
+<li><strong>Estructura propietaria.</strong> Se define quién será el propietario registral; con frecuencia, una sociedad panameña.</li>
+<li><strong>Documentos de la nave.</strong> Título de propiedad o contrato de compraventa, certificado de cancelación del registro anterior (o la autorización correspondiente) y certificados técnicos de arqueo y seguridad.</li>
+<li><strong>Registro provisional.</strong> Se obtiene la patente provisional de navegación y la licencia de radio, que permiten operar mientras se completa el trámite.</li>
+<li><strong>Inscripción del título.</strong> El título de propiedad se inscribe en el Registro Público.</li>
+<li><strong>Patente permanente.</strong> Completados los requisitos, la AMP expide la patente de navegación definitiva.</li>
+</ol>
+
+<h2>Hipoteca naval</h2>
+<p>Las hipotecas sobre naves panameñas se inscriben en el Registro Público y pueden inscribirse de forma preliminar a través de los consulados, lo que da seguridad al acreedor desde el momento del cierre de la operación. Por eso el registro panameño es habitual en financiamientos de buques.</p>
+
+<h2>Registro especial por arrendamiento a casco desnudo</h2>
+<p>La ley panameña permite inscribir naves arrendadas a casco desnudo que mantienen su registro original en otro país, y también la situación inversa, sujeto a los requisitos del caso.</p>
+
+<h2>Obligaciones después del registro</h2>
+<ul>
+<li>Pago de las tasas e impuestos anuales de la nave.</li>
+<li>Mantener vigentes los certificados de seguridad y de la tripulación (licencias de gente de mar).</li>
+<li>Si la nave pertenece a una sociedad panameña, cumplir las obligaciones de la sociedad: tasa única, agente residente y registro de beneficiarios finales.</li>
 </ul>
 `,
     },

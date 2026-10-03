@@ -23,6 +23,7 @@ for (const file of files) {
   if (!title) errors.push(`${rel}: sin <title>`);
   else if (titles.has(title)) errors.push(`${rel}: título duplicado con ${titles.get(title)}`);
   else titles.set(title, rel);
+  if (title && title.replace(/&amp;/g, '&').length > 70) errors.push(`${rel}: título largo (${title.length})`);
   if (!desc) errors.push(`${rel}: sin meta description`);
   else if (desc.length > 170) errors.push(`${rel}: description larga (${desc.length})`);
   if (!rel.endsWith('404.html') && h1 !== 1) errors.push(`${rel}: ${h1} H1`);

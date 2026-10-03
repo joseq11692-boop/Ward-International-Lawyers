@@ -1,0 +1,25 @@
+name: Verificar sitio
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generar sitio
+        run: npm run build
+      - name: Verificar enlaces, títulos y datos estructurados
+        run: npm run check
+      - name: Confirmar que public/ está actualizado
+        run: |
+          if [ -n "$(git status --porcelain public)" ]; then
+            echo "::error::public/ no coincide con el código fuente. Ejecute 'npm run build' y suba los cambios."
+            git status --short public
+            exit 1
+          fi

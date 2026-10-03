@@ -23,6 +23,8 @@ export default {
     leadBy: 'Wer Ihr Mandat betreut',
     faqTitle: 'Häufige Fragen',
     related: 'Verwandte Rechtsgebiete',
+    relatedGuides: 'Passende Ratgeber',
+    toc: 'In diesem Ratgeber',
     whatWeDo: 'Unsere Leistungen',
     howWeWork: 'So arbeiten wir',
     steps: [
@@ -55,6 +57,7 @@ export default {
     langSuggest: { text: 'Diese Website gibt es auch auf Deutsch.', go: 'Auf Deutsch ansehen', dismiss: 'Schließen' },
     cookies: { text: 'Wir verwenden Analyse-Cookies, um die Nutzung der Website zu verstehen und sie zu verbessern.', accept: 'Akzeptieren', reject: 'Ablehnen' },
     waMessage: 'Guten Tag, ich kontaktiere Sie über wardintlawyers.com und hätte eine rechtliche Anfrage.',
+    waArea: 'Guten Tag, ich kontaktiere Sie über wardintlawyers.com und hätte eine Anfrage zum Thema {area}.',
     form: {
       title: 'Schildern Sie uns Ihr Anliegen',
       intro: 'Füllen Sie das Formular aus, wir melden uns bei Ihnen. Alle Angaben werden vertraulich behandelt.',
@@ -69,6 +72,7 @@ export default {
       consent: 'Ich akzeptiere die <a href="{privacy}">Datenschutzerklärung</a>.',
       submit: 'Anfrage senden',
       submitWa: 'Per WhatsApp senden',
+      submitEmail: 'Lieber per E-Mail senden',
       sending: 'Wird gesendet…',
       ok: 'Vielen Dank. Wir haben Ihre Nachricht erhalten und melden uns in Kürze.',
       error: 'Das Formular konnte nicht gesendet werden. Bitte schreiben Sie uns per WhatsApp oder E-Mail.',
@@ -467,7 +471,7 @@ export default {
     },
 
     guideLitigation: {
-      title: 'Prozessführung in Panama für ausländische Unternehmen: Was Sie wissen müssen',
+      title: 'Prozessführung in Panama: Ratgeber für ausländische Firmen',
       description: 'Für Unternehmen aus Deutschland, Österreich und der Schweiz: Vollmacht, Apostille, Übersetzungen, Schiedsverfahren und Urteilsanerkennung in Panama.',
       h1: 'Prozessführung in Panama für ausländische Unternehmen',
       lead: 'Wenn Ihr Unternehmen einen Rechtsstreit in Panama hat, sollten Sie sich diese Fragen stellen, bevor Sie den ersten Schritt tun.',
@@ -507,6 +511,138 @@ export default {
 <li>Informationen zu Vermögenswerten der Gegenseite in Panama.</li>
 <li>Apostillierte Vollmacht für Ihren Anwalt.</li>
 <li>Klares Ziel und ungefähres Budget.</li>
+</ul>
+`,
+    },
+
+    guideDebt: {
+      title: 'Forderungseinzug in Panama: Wege und Arrest von Vermögenswerten',
+      description: 'So treiben Sie Forderungen gegen Unternehmen in Panama ein: Mahnschreiben, Mediation, Urkundenprozess, Arrest und Tipps für Gläubiger aus dem Ausland.',
+      h1: 'Forderungseinzug gegen Unternehmen in Panama',
+      lead: 'Offene Rechnungen, Darlehen oder Vertragsbruch: Diese rechtlichen Instrumente stehen Ihnen in Panama zur Verfügung — und in dieser Reihenfolge setzen Sie sie am besten ein.',
+      author: 'john',
+      date: '2026-10-03',
+      minutes: 6,
+      practice: 'litigation',
+      body: `
+<h2>1. Beweise sammeln und ordnen</h2>
+<p>Halten Sie Vertrag, Rechnungen, Bestellungen, Lieferscheine und jede Korrespondenz bereit, in der der Schuldner die Forderung anerkennt. Die Qualität dieser Unterlagen bestimmt den schnellsten Weg zum Geld.</p>
+
+<h2>2. Anwaltliches Mahnschreiben</h2>
+<p>Ein vom Anwalt unterzeichnetes Mahnschreiben dokumentiert die Forderung, setzt eine Zahlungsfrist und genügt oft, um Verhandlungen zu eröffnen. Es ist auch der richtige Moment, eine schriftliche Ratenzahlung vorzuschlagen — idealerweise abgesichert durch eine Urkunde, die den Einzug bei erneutem Verzug erleichtert.</p>
+
+<h2>3. Schlichtung oder Mediation</h2>
+<p>Lohnt es sich, die Geschäftsbeziehung zu erhalten, führt eine Mediation schneller und günstiger zu einer Einigung. In Panama gibt es Schlichtungs- und Schiedszentren, etwa das der Handelskammer von Panama. Ein gut formulierter Vergleich kann vollstreckt werden, wenn der Schuldner erneut nicht zahlt.</p>
+
+<h2>4. Vollstreckungsverfahren: wenn ein vollstreckbarer Titel vorliegt</h2>
+<p>Ist die Forderung in einem Dokument verbrieft, das das Gesetz als Vollstreckungstitel anerkennt — etwa ein Schuldschein oder Wechsel —, kann der Gläubiger direkt das Vollstreckungsverfahren (Proceso Ejecutivo) einleiten. Das ist der schnellste Weg, da das Gericht vom Bestehen der Schuld ausgeht und die Einwendungen des Schuldners begrenzt sind.</p>
+
+<h2>5. Erkenntnisverfahren: wenn die Forderung bewiesen werden muss</h2>
+<p>Ohne Vollstreckungstitel — etwa bei nicht akzeptierten Rechnungen oder streitigen Vertragspflichten — ist ein Verfahren nötig, in dem Bestehen und Höhe der Forderung bewiesen werden. Das Urteil kann anschließend vollstreckt werden.</p>
+
+<h2>6. Sicherungsmaßnahmen: das Vermögen des Schuldners sichern</h2>
+<p>Das größte Risiko beim Forderungseinzug ist nicht, den Prozess zu verlieren, sondern ihn zu gewinnen und kein Vermögen mehr vorzufinden. Das panamaische Recht erlaubt von Beginn an den Arrest von Vermögenswerten des Schuldners (Konten, Immobilien, Fahrzeuge, Schiffe, Forderungen), abhängig von Voraussetzungen und meist gegen Sicherheitsleistung. Eine vorherige Vermögensrecherche gehört deshalb zur Strategie.</p>
+
+<h2>7. Wenn Sie im Ausland sitzen</h2>
+<ul>
+<li>Erteilen Sie eine notariell beglaubigte Vollmacht mit Apostille.</li>
+<li>Deutschsprachige Dokumente müssen von einem in Panama zugelassenen öffentlichen Übersetzer ins Spanische übersetzt werden.</li>
+<li>Haben Sie bereits ein Urteil oder einen Schiedsspruch aus Deutschland, Österreich oder der Schweiz, kann dieser in Panama anerkannt (Exequatur) und gegen dortiges Vermögen vollstreckt werden.</li>
+</ul>
+
+<h2>8. Nicht zu lange warten</h2>
+<p>Forderungen verjähren, und die Fristen hängen von der Art der Verpflichtung ab. Je länger Sie warten, desto wahrscheinlicher ist zudem, dass der Schuldner Vermögen beiseiteschafft oder insolvent wird. Lassen Sie sich frühzeitig beraten — gerne auf Deutsch.</p>
+`,
+    },
+
+    guideFoundation: {
+      title: 'Privatnützige Stiftung in Panama: Funktion, Nutzen und Gründung',
+      description: 'Die panamaische Privatstiftung (Gesetz Nr. 25 von 1995): Aufbau, Einsatz in Vermögens- und Nachfolgeplanung, Voraussetzungen und laufende Pflichten.',
+      h1: 'Privatnützige Stiftung in Panama: Funktion und Nutzen',
+      lead: 'Die privatnützige Stiftung (Fundación de Interés Privado) ist eines der meistgenutzten Instrumente, um Familienvermögen zu ordnen und zu schützen. So funktioniert sie — und wann sie sinnvoll ist.',
+      author: 'john',
+      date: '2026-10-03',
+      minutes: 6,
+      practice: 'corporate',
+      body: `
+<h2>Was ist eine privatnützige Stiftung?</h2>
+<p>Eine juristische Person nach Gesetz Nr. 25 von 1995, der ein Stifter Vermögen überträgt, das zugunsten der von ihm bestimmten Personen oder Zwecke verwaltet wird. Anders als eine Aktiengesellschaft hat die Stiftung weder Aktionäre noch Eigentümer: Das Vermögen gehört der Stiftung selbst.</p>
+
+<h2>Die Beteiligten</h2>
+<ul>
+<li><strong>Stifter:</strong> gründet die Stiftung und bringt das Anfangsvermögen ein — natürliche oder juristische Person jeder Staatsangehörigkeit.</li>
+<li><strong>Stiftungsrat:</strong> verwaltet die Stiftung und erfüllt ihre Zwecke; bestehend aus drei natürlichen Personen oder einer juristischen Person.</li>
+<li><strong>Begünstigte:</strong> erhalten die Leistungen nach den Regeln des Stifters.</li>
+<li><strong>Protektor (optional):</strong> Kontrollorgan, das den Stiftungsrat überwachen kann.</li>
+<li><strong>Registered Agent:</strong> gesetzlich vorgeschriebener Anwalt bzw. Kanzlei in Panama.</li>
+</ul>
+
+<h2>Wofür sie genutzt wird</h2>
+<ul>
+<li><strong>Nachfolgeplanung:</strong> Der Stifter legt zu Lebzeiten fest, wie und wann das Vermögen verteilt wird — das kann langwierige Nachlassverfahren und Erbstreitigkeiten vermeiden.</li>
+<li><strong>Ordnung des Familienvermögens:</strong> Beteiligungen, Gesellschaftsanteile oder Immobilien unter einer Struktur mit klaren Regeln.</li>
+<li><strong>Kontinuität:</strong> Die Stiftung endet nicht mit dem Tod des Stifters oder der Ratsmitglieder.</li>
+</ul>
+
+<h2>Die Gründungsdokumente</h2>
+<p><strong>Die Stiftungsurkunde</strong> enthält die wesentlichen Angaben (Name, Anfangsvermögen, Stiftungsrat, Registered Agent, Zwecke) und wird im Öffentlichen Register eingetragen. <strong>Das Reglement</strong> ist ein privates Dokument, in dem der Stifter die Begünstigten und die Verteilung im Detail festlegt. So verbinden sich Registerpublizität und Diskretion in Familienangelegenheiten.</p>
+
+<h2>Voraussetzungen und Grenzen</h2>
+<ul>
+<li>Mindestanfangsvermögen von zehntausend US-Dollar, in Geld oder anderen Vermögenswerten.</li>
+<li>Die Stiftung darf nicht gewohnheitsmäßig gewinnorientiert Handel treiben, kann aber Anteile an Gesellschaften halten, die dies tun.</li>
+<li>Jährliche Gebühr (Tasa Única) und ein Registered Agent sind Pflicht.</li>
+<li>Der Registered Agent muss die wirtschaftlich Berechtigten kennen und registrieren.</li>
+</ul>
+
+<h2>Stiftung oder Aktiengesellschaft?</h2>
+<p>Für den Geschäftsbetrieb ist die Aktiengesellschaft das natürliche Instrument; für den Erhalt und die Weitergabe von Vermögen eignet sich meist die Stiftung. Eine häufige Struktur kombiniert beide: Die Stiftung hält die Aktien einer oder mehrerer operativer Gesellschaften.</p>
+
+<h2>Vor der Gründung</h2>
+<p>Eine Stiftung ist nur so gut wie ihr Reglement. Bedenken Sie Szenarien wie den Tod des Stifters, minderjährige Begünstigte oder Streit unter Erben — und die steuerlichen Pflichten von Stifter und Begünstigten in ihren Wohnsitzländern, etwa in Deutschland, Österreich oder der Schweiz.</p>
+`,
+    },
+
+    guideShip: {
+      title: 'Schiffsregistrierung in Panama: Voraussetzungen und Ablauf',
+      description: 'So registrieren Sie ein Schiff oder eine Yacht unter panamaischer Flagge: vorläufige und endgültige Registrierung, Unterlagen, Schiffshypothek und Pflichten.',
+      h1: 'Schiffsregistrierung in Panama: Voraussetzungen und Ablauf',
+      lead: 'Panama führt das größte Schiffsregister der Welt. So läuft die Registrierung Ihres Schiffes unter panamaischer Flagge ab.',
+      author: 'jose',
+      date: '2026-10-03',
+      minutes: 5,
+      practice: 'maritime',
+      body: `
+<h2>Warum unter panamaischer Flagge?</h2>
+<p>Das panamaische Register steht Eigentümern jeder Staatsangehörigkeit offen, verfügt über ein weltweites Netz von Konsulaten und technischen Büros und bietet ein von internationalen Finanzierern anerkanntes Schiffshypothekenrecht. Häufig ist Eigentümerin des Schiffes eine eigens gegründete panamaische Aktiengesellschaft.</p>
+
+<h2>Die Beteiligten</h2>
+<ul>
+<li><strong>Seebehörde Panamas (AMP)</strong> über die Generaldirektion Handelsmarine: erteilt das Schiffspatent und die Funklizenzen.</li>
+<li><strong>Öffentliches Register Panamas:</strong> trägt Eigentum und Schiffshypotheken ein.</li>
+<li><strong>Konsulate und technische Büros der AMP im Ausland:</strong> ermöglichen den Start des Verfahrens, ohne dass das Schiff in Panama ist.</li>
+</ul>
+
+<h2>Schritt für Schritt</h2>
+<ol>
+<li><strong>Eigentümerstruktur.</strong> Festlegung des eingetragenen Eigentümers — oft eine panamaische Gesellschaft.</li>
+<li><strong>Schiffsunterlagen.</strong> Eigentumsnachweis oder Kaufvertrag, Löschungsbescheinigung des bisherigen Registers (bzw. entsprechende Genehmigung) sowie technische Vermessungs- und Sicherheitszeugnisse.</li>
+<li><strong>Vorläufige Registrierung.</strong> Vorläufiges Schiffspatent und Funklizenz ermöglichen den Betrieb während des laufenden Verfahrens.</li>
+<li><strong>Eigentumseintragung.</strong> Der Eigentumstitel wird im Öffentlichen Register eingetragen.</li>
+<li><strong>Endgültiges Patent.</strong> Nach Erfüllung aller Voraussetzungen erteilt die AMP das endgültige Schiffspatent.</li>
+</ol>
+
+<h2>Schiffshypothek</h2>
+<p>Hypotheken auf panamaische Schiffe werden im Öffentlichen Register eingetragen und können über die Konsulate vorläufig eingetragen werden — das schützt den Kreditgeber ab dem Closing. Deshalb ist das panamaische Register in der Schiffsfinanzierung so verbreitet.</p>
+
+<h2>Bareboat-Charter-Registrierung</h2>
+<p>Das panamaische Recht erlaubt die Eintragung von Schiffen in Bareboat-Charter, die ihr ursprüngliches Register in einem anderen Land behalten, und umgekehrt — jeweils unter den geltenden Voraussetzungen.</p>
+
+<h2>Pflichten nach der Registrierung</h2>
+<ul>
+<li>Zahlung der jährlichen Gebühren und Steuern des Schiffes.</li>
+<li>Gültige Sicherheitszeugnisse und Besatzungsdokumente (Seeleutepatente).</li>
+<li>Gehört das Schiff einer panamaischen Gesellschaft: deren Pflichten wie Tasa Única, Registered Agent und Register der wirtschaftlich Berechtigten.</li>
 </ul>
 `,
     },
