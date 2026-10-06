@@ -18,7 +18,6 @@ export default {
     readGuide: 'Ratgeber lesen',
     home: 'Startseite',
     partner: 'Gründungspartner',
-    assistant: 'Rechtsassistentin',
     viewProfile: 'Profil ansehen',
     leadBy: 'Wer Ihr Mandat betreut',
     faqTitle: 'Häufige Fragen',
@@ -496,10 +495,6 @@ export default {
       associations: ['Panamaische Anwaltskammer (Colegio Nacional de Abogados).', 'Panamaische Vereinigung der Führungskräfte (APEDE).'],
     },
 
-    karina: {
-      bio: 'Karina hat Tourismus-Betriebswirtschaft an der Universidad Católica Santa María la Antigua studiert und umfangreiche Erfahrung in Vertrieb, Logistik und Kundenservice bei international tätigen Unternehmen gesammelt. 2018 wurde sie für das Förderprogramm Voces Vitales Panamá ausgewählt. Sie ist Ihre erste Ansprechpartnerin in der Kanzlei.',
-      honors: ['Sigma Lambda Ehrenkapitel, Fakultät für Tourismus-Betriebswirtschaft (USMA).', 'Sigma Lambda Ehrenkapitel, Juristische Fakultät der Universität Panama.'],
-    },
 
     guides: {
       title: 'Ratgeber Panama: Firmengründung & Prozessführung | Ward International Lawyers',

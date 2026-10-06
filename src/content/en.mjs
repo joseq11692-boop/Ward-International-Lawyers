@@ -18,7 +18,6 @@ export default {
     readGuide: 'Read guide',
     home: 'Home',
     partner: 'Founding Partner',
-    assistant: 'Legal Assistant',
     viewProfile: 'View profile',
     leadBy: 'Who handles your matter',
     faqTitle: 'Frequently asked questions',
@@ -498,10 +497,6 @@ export default {
       associations: ['Panama National Bar Association.', 'Panamanian Association of Business Executives (APEDE).'],
     },
 
-    karina: {
-      bio: 'A graduate in Tourism Business Administration from Universidad Católica Santa María la Antigua, Karina has broad experience in sales, logistics and customer service with international companies. In 2018 she was selected for the Voces Vitales Panamá women’s empowerment program. She is your first point of contact with the firm.',
-      honors: ['Sigma Lambda Honor Chapter, School of Tourism Business Administration (USMA).', 'Sigma Lambda Honor Chapter, School of Law, University of Panama.'],
-    },
 
     guides: {
       title: 'Panama Legal Insights | Ward International Lawyers',

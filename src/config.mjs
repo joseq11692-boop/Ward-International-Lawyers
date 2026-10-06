@@ -54,13 +54,6 @@ export const people = {
     img: 'jose-quiel',
     langs: ['es', 'en'],
   },
-  karina: {
-    name: 'Karina Y. Serrano Álvarez',
-    short: 'Karina Serrano',
-    email: 'kserrano@wardintlawyers.com',
-    phone: { display: '(507) 6137-4538', e164: '+50761374538' },
-    img: 'karina-serrano',
-  },
 };
 
 // Orden y rutas de todas las páginas, por idioma.

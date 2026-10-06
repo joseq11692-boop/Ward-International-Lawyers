@@ -18,7 +18,6 @@ export default {
     readGuide: 'Leer guía',
     home: 'Inicio',
     partner: 'Socio Fundador',
-    assistant: 'Asistente Legal',
     viewProfile: 'Ver perfil',
     leadBy: 'Quién lleva su caso',
     faqTitle: 'Preguntas frecuentes',
@@ -500,10 +499,6 @@ export default {
       associations: ['Colegio Nacional de Abogados de Panamá.', 'Asociación Panameña de Ejecutivos de Empresa (APEDE).'],
     },
 
-    karina: {
-      bio: 'Graduada en Administración de Empresas Turísticas de la Universidad Católica Santa María la Antigua, Karina tiene amplia trayectoria en ventas, logística y servicio al cliente con empresas de proyección internacional. Fue seleccionada en 2018 para el programa de empoderamiento femenino Voces Vitales Panamá. Es su primer punto de contacto con la firma.',
-      honors: ['Capítulo de Honor Sigma Lambda, Facultad de Administración de Empresas Turísticas (USMA).', 'Capítulo de Honor Sigma Lambda, Facultad de Derecho de la Universidad de Panamá.'],
-    },
 
     guides: {
       title: 'Guías legales sobre Panamá | Ward International Lawyers',

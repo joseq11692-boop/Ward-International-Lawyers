@@ -36,7 +36,6 @@ const images = {
   earth: { base: 'earth', widths: [800, 1600], w: 1600, h: 1065 },
   'john-ward': { base: 'john-ward', widths: [400, 800], w: 800, h: 1000 },
   'jose-quiel': { base: 'jose-quiel', widths: [400, 800], w: 800, h: 1000 },
-  'karina-serrano': { base: 'karina-serrano', widths: [360], w: 360, h: 300 },
 };
 const srcset = (k) => images[k].widths.map((w) => `/assets/img/${images[k].base}-${w}.webp ${w}w`).join(', ');
 const imgSrc = (k, w) => `/assets/img/${images[k].base}-${w || images[k].widths.at(-1)}.webp`;
@@ -537,20 +536,10 @@ function renderTeam(lang) {
   setWa(lang, null);
   const c = content[lang];
   const p = c.pages.team;
-  const k = people.karina;
   const trail = [{ name: c.ui.home, href: url('home', lang) }, { name: p.eyebrow, href: url('team', lang) }];
   const body = `${pageHero(lang, trail, p)}
 <section class="section section-cream"><div class="wrap">
   <div class="grid-2">${personCard('john', lang)}${personCard('jose', lang)}</div>
-  <article class="person" style="margin-top:clamp(20px,3vw,32px)">
-    ${img('karina-serrano', k.name, { sizes: '(max-width:560px) 100vw, 200px' })}
-    <div class="person-body">
-      <div class="person-role">${esc(c.ui.assistant)}</div>
-      <h3>${esc(k.name)}</h3>
-      <p>${esc(c.pages.karina.bio)}</p>
-      <p class="langs"><a href="tel:${k.phone.e164}" data-loc="team">${esc(k.phone.display)}</a> · <a href="mailto:${k.email}" data-loc="team">${k.email}</a></p>
-    </div>
-  </article>
 </div></section>
 ${finalCta(lang)}`;
   return page({ lang, key: 'team', title: p.title, description: p.description, body, schema: [breadcrumbSchema(trail), personSchema('john', lang), personSchema('jose', lang)] });
